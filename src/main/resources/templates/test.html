@@ -1,0 +1,889 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-162832031-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-162832031-1');
+    </script>
+    <script>
+        !function(f,b,e,v,n,t,s)
+        {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+            n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+            if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+            n.queue=[];t=b.createElement(e);t.async=!0;
+            t.src=v;s=b.getElementsByTagName(e)[0];
+            s.parentNode.insertBefore(t,s)}(window, document,'script',
+            'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', '249773239548297');
+        fbq('track', 'PageView');
+    </script>
+    <title>UHR</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!--<link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet">-->
+    <!--<link href="https://fonts.googleapis.com/css?family=Josefin+Sans" rel="stylesheet">-->
+    <!--<link href="https://fonts.googleapis.com/css?family=Nothing+You+Could+Do" rel="stylesheet">-->
+
+    <link rel="stylesheet" href="css/open-iconic-bootstrap.min.css">
+    <link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="css/magnific-popup.css">
+    <link rel="stylesheet" href="css/aos.css">
+    <link rel="stylesheet" href="css/ionicons.min.css">
+    <link rel="stylesheet" href="css/bootstrap-datepicker.css">
+    <link rel="stylesheet" href="css/jquery.timepicker.css">
+    <link rel="stylesheet" href="css/flaticon.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style2.css">
+    <link rel="stylesheet" href="css/icomoon.css">
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TN9PV57"
+                  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+<style type="text/css">
+    body {
+        background-color: black;
+    }
+</style>
+<nav class="navbar navbar-expand-lg navbar-dark ftco_navbar  ftco-navbar-light" id="ftco-navbar">
+    <div class="container">
+        <a class="navbar-brand" href="/"> <img src="/images/UHR white 1.png" class="logo"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav"
+                aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+            <img src="/images/Menu.png" class="logo">
+        </button>
+        <div class="collapse navbar-collapse" id="ftco-nav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item"><a href="/our_services" class="nav-link">Our services</a></li>
+                <li class="nav-item"><a href="/about" class="nav-link">About</a></li>
+                <li class="nav-item"><a href="/contacts" class="nav-link">Contact us</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<!-- END nav -->
+<!-- Content here -->
+
+
+<section class="ftco-section">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-9 heading-sectio text-center">
+                <p class="text">Instruction</p>
+
+                <p class="p-about-desc">
+                    Here is 23 questions.
+                    <br><br>
+                    Move the stick to choose appropriate variant. The closer to variant (or to the arrow in mobile version) you move the stick, the more variant suits you. Don't move the stick from the center, if no one sentence is about you at all.
+                    <br><br>
+                    Both - both sentences on the left and on the right describes you equally.
+                    <br>
+                    Not one - neither sentences on the left nor on the right describes you at all.
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section class="ftco-section">
+
+    <div class="test_images im-0"></div>
+
+            <div class="status alert alert-success" style="display: none"></div>
+            <form onSubmit="return func(this);" id="test-form" class="contact" name="contact-form" method="post" th:action="@{/result}"
+                  th:object="${test}" >
+                
+                <!--input 1-->
+                <div class=" row row-cols-1  row-cols-lg-3 cont">
+                    <div class="col ">
+                        <p class="test-test test-right">Usually, I am deeply involved in an activity. I try to find the most successful ways to do it
+                         </p></div>
+                    <div class="col">
+                        <div class="form-group">
+                        <p class="choice">Question № 1</p>
+                        <div class="range">
+                            <input class="range__input" type="range" th:field="*{a}" value="0" min="-2" max="2" step="1"/>
+                            <img src="/images/5 points.png" class="five-points"/>
+                        </div>
+                        </div>
+
+                    </div>
+                    <div class="col ">
+                        <p class="test-test test-left"> Usually, I’m deeply touched by person’s problems. I try to find ways to solve
+                            them</p>
+                    </div>
+                </div>
+
+                <div class="test_images im-1"></div>
+
+                <!--input 2-->
+                <div class="row  row-cols-1  row-cols-lg-3 cont">
+                    <div class="col ">
+                        <p class="test-test test-right">It is more important for me that the result of my work gave benefit for the humanity, even if
+                            I would have to do this to the detriment of myself </p>
+                    </div>
+                    <div class="col ">
+                        <div class="form-group">
+                        <p class="choice">Question № 2</p>
+                        <div class="range">
+                            <input class="range__input" type="range" th:field="*{b}" value="0" min="-2" max="2" step="1"/>
+                            <img src="/images/5 points.png" class="five-points"/>
+                        </div>
+                        </div>
+                    </div>
+                    <div class="col ">
+                        <p class="test-test test-left"> It is more important for me to get to the truth, even if it would be unlikely for somebody
+                            and be opposite to the existential viewpoint</p>
+                    </div>
+                </div>
+                <div class="test_images im-2"></div>
+                <!--input 3-->
+                <div class="row  row-cols-1  row-cols-lg-3 cont">
+                    <div class="col ">
+                        <p class="test-test test-right">Creating something new is essential part of work, which I would like to do
+                             </p>
+                    </div>
+                    <div class="col ">
+                        <div class="form-group">
+                        <p class="choice">Question № 3</p>
+                        <div class="range">
+                            <input class="range__input" type="range" th:field="*{d}" value="0" min="-2" max="3" step="1"
+                                   />
+                            <img src="/images/6 points.png" class="six-points"/>
+                        </div>
+                        </div>
+
+                    </div>
+                    <div class="col ">
+                        <p class="test-test test-left"> Managing people is essential part of work, which I would like to do
+                            </p>
+                    </div>
+                </div>
+                <div class="test_images im-3"></div>
+                <!--input 4-->
+                <div class="row  row-cols-1  row-cols-lg-3 cont">
+                    <div class="col ">
+                        <p class="test-test test-right">If my idea is not appreciated by people, I will get upset, because I created it for their own
+                            good </p>
+                    </div>
+                    <div class="col ">
+                        <div class="form-group">
+                            <p class="choice">Question № 4</p>
+                            <input type="range" class="range__input" id="Range4" th:field="*{e}" min="-2" max="3"
+                                   step="1" />
+                            <img src="/images/6 points.png" class="six-points"/>
+                        </div>
+
+                    </div>
+                    <div class="col "><p class="test-test test-left">
+                         If my idea is not appreciated by people, I will get upset, because they don’t understand the
+                        beauty of my concepts</p>
+                    </div>
+                </div>
+                <div class="test_images im-4"></div>
+                <!--input 5-->
+                <div class="row  row-cols-1  row-cols-lg-3 cont">
+                    <div class="col "><p class="test-test test-right">
+                        To acquire a skill it’s enough to perform it accurately, without theoretical learning of the
+                        process. </p>
+                    </div>
+                    <div class="col ">
+                        <div class="form-group">
+                            <p class="choice">Question № 5</p>
+                            <input type="range" class="range__input" id="Range5" th:field="*{f}" min="-2" max="2" step="1" >
+                            <img src="/images/5 points.png" class="five-points"/>
+                        </div>
+
+                    </div>
+                    <div class="col ">
+                        <p class="test-test test-left">
+                        To acquire a skill I must to learn the theory clearly, and only after that start performing it.
+                        </p></div>
+                </div>
+                <div class="test_images im-5"></div>
+                <!--input 6-->
+                <div class="row  row-cols-1  row-cols-lg-3 cont">
+                    <div class="col "><p class="test-test test-right">
+                        I try not to be like all people, but have my own point of view all-around, even if it’s
+                        problematic for me </p>
+                    </div>
+                    <div class="col ">
+                        <div class="form-group">
+                            <p class="choice">Question № 6</p>
+                            <input type="range" class="range__input" id="Range6" th:field="*{g}" min="-2" max="2" step="1" >
+                            <img src="/images/5 points.png" class="five-points"/>
+                        </div>
+                    </div>
+                    <div class="col ">
+                        <p class="test-test test-left">
+                            I try not to disagree with most, not to be an upstart, but just to do my work</p>
+                    </div>
+                </div>
+                <div class="test_images im-6"></div>
+                <!--7-->
+                <div class="row  row-cols-1  row-cols-lg-3 cont">
+                    <div class="col "><p class="test-test test-right">
+                        It’s more important for me that my occupation provides stability </p>
+                    </div>
+                    <div class="col ">
+                        <div class="form-group">
+                            <p class="choice">Question № 7</p>
+                            <input type="range" class="range__input" id="Range7" th:field="*{h}" min="-2" max="3"
+                                   step="1" >
+                            <img src="/images/6 points.png" class="six-points"/>
+                        </div>
+                    </div>
+                    <div class="col "><p class="test-test test-left">
+                         It’s more important for me that my occupation provided an ability to help other people
+                        </p>
+                    </div>
+                </div>
+                <div class="test_images im-7"></div>
+                <!--8-->
+                <div class="row  row-cols-1  row-cols-lg-3 cont">
+                    <div class="col "><p class="test-test test-right">
+                        I want to and I can give specific instructions to people on what they must do; I can be
+                        responsible for them </p>
+                    </div>
+                    <div class="col ">
+                        <div class="form-group">
+                            <p class="choice">Question № 8</p>
+                            <input type="range" class="range__input" id="Range8" th:field="*{k}" min="-2" max="2"
+                                   step="1" >
+                            <img src="/images/5 points.png" class="five-points"/>
+                        </div>
+                    </div>
+                    <div class="col "><p class="test-test test-left">
+                         I would like to get specific instructions for each action; have an ability to reach out to more
+                        experienced employer for the advice</p>
+                    </div>
+                </div>
+                <div class="test_images im-8"></div>
+                <!--9-->
+                <div class="row  row-cols-1  row-cols-lg-3 cont">
+                    <div class="col "><p class="test-test test-right">
+                        I would like to be a person who is passionate about their own work and just enjoys a well-done
+                        task, regardless of my position </p>
+                    </div>
+                    <div class="col ">
+                        <div class="form-group">
+                            <p class="choice">Question № 9</p>
+                            <input type="range" class="range__input" id="Range9" th:field="*{l}" min="-2" max="2"
+                                   step="1" >
+                            <img src="/images/5 points.png" class="five-points"/>
+                        </div>
+                    </div>
+                    <div class="col "><p class="test-test test-left">
+                         I would like to be a person who has accomplished a lot, achieved success</p>
+                    </div>
+                </div>
+                <div class="test_images im-9"></div>
+                <!--10-->
+                <div class="row  row-cols-1  row-cols-lg-3 cont">
+                    <div class="col "><p class="test-test test-right">
+                        I see the world depending on my mood; I see many things in different ways </p>
+                    </div>
+                    <div class="col ">
+                        <div class="form-group">
+                            <p class="choice">Question № 10</p>
+                            <input type="range" class="range__input" id="Range10" th:field="*{m}" min="-2" max="2"
+                                   step="1" >
+                            <img src="/images/5 points.png" class="five-points"/>
+                        </div>
+                    </div>
+                    <div class="col "><p class="test-test test-left">
+                         I try to see the world objectively, not allowing my mood or emotion to influence my perception
+                        </p></div>
+                </div>
+                <div class="test_images im-10"></div>
+                <!--11-->
+                <div class="row  row-cols-1  row-cols-lg-3 cont">
+                    <div class="col "><p class="test-test test-right">
+                        I set big goals, even if I can’t always achieve them </p>
+                    </div>
+                    <div class="col ">
+                        <div class="form-group">
+                            <p class="choice">Question № 11</p>
+                            <input type="range" class="range__input" id="Range11" th:field="*{n}" min="-2" max="2"
+                                   step="1" >
+                            <img src="/images/5 points.png" class="five-points"/>
+                        </div>
+                    </div>
+                    <div class="col "><p class="test-test test-left">
+                         I set humble goals, but I know exactly, that I can achieve them</p>
+                    </div>
+                </div>
+                <div class="test_images im-11"></div>
+                <!--12-->
+                <div class="row  row-cols-1  row-cols-lg-3 cont">
+                    <div class="col "><p class="test-test test-right">
+                        Sometimes, I am ready to work on tasks, that I don’t really like, as long as my overall goal
+                        depends on it in the long run </p>
+                    </div>
+                    <div class="col ">
+                        <div class="form-group">
+                            <p class="choice">Question № 12</p>
+                            <input type="range" class="range__input" id="Range12" th:field="*{o}" min="-2" max="2"
+                                   step="1" >
+                            <img src="/images/5 points.png" class="five-points"/>
+                        </div>
+                    </div>
+                    <div class="col "><p class="test-test test-left">
+                         I am completely against the tasks, that I don’t enjoy, even if it could help my goals in the
+                        long run</p>
+                    </div>
+                </div>
+                <div class="test_images im-12"></div>
+                <!--13-->
+                <div class="row  row-cols-1  row-cols-lg-3 cont">
+                    <div class="col "><p class="test-test test-right">
+                        I am ready to invest time and effort even without salary, if it would satisfy my world vision
+                         </p></div>
+                    <div class="col ">
+                        <div class="form-group">
+                            <p class="choice">Question № 13</p>
+                            <input type="range" class="range__input" id="Range13" th:field="*{p}" min="-2" max="3"
+                                   step="1" >
+                            <img src="/images/6 points.png" class="six-points"/>
+                        </div>
+                    </div>
+                    <div class="col "><p class="test-test test-left">
+                         I am ready to invest my own money in the developing of business, even if I would be at a risk of
+                        losing it</p>
+                    </div>
+                </div>
+                <div class="test_images im-13"></div>
+                <!--14-->
+                <div class="row    row-cols-1  row-cols-lg-3 cont">
+                    <div class="col "><p class="test-test test-right">
+                        I can convince people to do something, persuade them to make a decision that benefits me
+                         </p>
+                    </div>
+                    <div class="col ">
+                        <div class="form-group">
+                            <p class="choice">Question № 14</p>
+                            <input type="range" class="range__input" id="Range14" th:field="*{r}" min="-2" max="2"
+                                   step="1" >
+                            <img src="/images/5 points.png" class="five-points"/>
+                        </div>
+                    </div>
+                    <div class="col "><p class="test-test test-left">
+                         Truth is the key to authority. Being able to convince someone means way less.
+                        </p>
+                    </div>
+                </div>
+                <div class="test_images im-14"></div>
+                <!--15-->
+                <div class="row    row-cols-1  row-cols-lg-3 cont">
+                    <div class="col "><p class="test-test test-right">
+                        I would like to do work that helps make this world a better place </p>
+                    </div>
+                    <div class="col ">
+                        <div class="form-group">
+                            <p class="choice">Question № 15</p>
+                            <input type="range" class="range__input" id="Range15" th:field="*{s}" min="-2" max="3"
+                                   step="1" >
+                            <img src="/images/6 points.png" class="six-points"/>
+                        </div>
+                    </div>
+                    <div class="col "><p class="test-test test-left">
+                         I would like to work for my own goals and well-being</p>
+                    </div>
+                </div>
+                <div class="test_images im-15"></div>
+                <!--16-->
+                <div class="row    row-cols-1  row-cols-lg-3 cont">
+                    <div class="col "><p class="test-test test-right">
+                        I would prefer to spend my work time in laboratory / workshop / isolated office, without being
+                        distracted and talking with colleagues </p>
+                    </div>
+                    <div class="col ">
+                        <div class="form-group">
+                            <p class="choice">Question № 16</p>
+                            <input type="range" class="range__input" id="Range16" th:field="*{t}" min="-2" max="2"
+                                   step="1" >
+                            <img src="/images/5 points.png" class="five-points"/>
+                        </div>
+                    </div>
+                    <div class="col "><p class="test-test test-left">
+                         I would prefer to spend my work time in a friendly environment, to be able to take a break
+                        sometimes</p>
+                    </div>
+                </div>
+                <div class="test_images im-16"></div>
+                <!--17-->
+                <div class="row    row-cols-1  row-cols-lg-3 cont">
+                    <div class="col "><p class="test-test test-right">
+                         If I suddenly got a big amount of money, I would invest into a good cause, like buying equipment
+                        for the poor hospital or building a playground, etc.</p>
+                    </div>
+                    <div class="col ">
+                        <div class="form-group">
+                            <p class="choice">Question № 17</p>
+                            <input type="range" class="range__input" id="Range17" th:field="*{x}" min="-2" max="3"
+                                   step="1" >
+                            <img src="/images/6 points.png" class="six-points"/>
+                        </div>
+                    </div>
+                    <div class="col "><p class="test-test test-left">
+                         If I suddenly got a big amount of money, I would invest it in my own business
+                        </p>
+                    </div>
+                </div>
+                <div class="test_images im-17"></div>
+                <!--18-->
+                <div class="row    row-cols-1  row-cols-lg-3 cont">
+                    <div class="col "><p class="test-test test-right">
+                        I might not understand the intricate details of my work, but I could easily manage the work of
+                        others and strategize for the organization </p>
+                    </div>
+                    <div class="col ">
+                        <div class="form-group">
+                            <p class="choice">Question № 18</p>
+                            <input type="range" class="range__input" id="Range18" th:field="*{y}" min="-2" max="2"
+                                   step="1" >
+                            <img src="/images/5 points.png" class="five-points"/>
+                        </div>
+                    </div>
+                    <div class="col "><p class="test-test test-left">
+                         I would prefer to have mastered my occupation, even if I don’t have a high position, I would
+                        like to know the nuances of my profession</p>
+                    </div>
+                </div>
+                <div class="test_images im-18"></div>
+                <!--19-->
+                <div class="row    row-cols-1  row-cols-lg-3 cont">
+                    <div class="col "><p class="test-test test-right">
+                        I act more effectively if I have certain instructions, that bring the guaranteed results </p>
+                    </div>
+                    <div class="col ">
+                        <div class="form-group">
+                            <p class="choice">Question № 19</p>
+                            <input type="range" class="range__input" id="Range19" th:field="*{z}" min="-2" max="2"
+                                   step="1" >
+                            <img src="/images/5 points.png" class="five-points"/>
+                        </div>
+                    </div>
+                    <div class="col "><p class="test-test test-left">
+                         I can create new methods of achieving some results for a greater cause</p>
+                    </div>
+                </div>
+                <div class="test_images im-19"></div>
+                <!--20-->
+                <div class="row    row-cols-1  row-cols-lg-3 cont">
+                    <div class="col "><p class="test-test test-right">
+                        My work could be helping people in need </p>
+                    </div>
+                    <div class="col ">
+                        <div class="form-group">
+                            <p class="choice">Question № 20</p>
+                            <input type="range" class="range__input" id="Range20" th:field="*{q}" min="-2" max="2"
+                                   step="1" >
+                            <img src="/images/5 points.png" class="five-points"/>
+                        </div>
+                    </div>
+                    <div class="col "><p class="test-test test-left">
+                         My work could be targeting a smaller circle, who can really appreciate it and afford it
+                        </p>
+                    </div>
+                </div>
+                <div class="test_images im-20"></div>
+                <!--21-->
+                <div class="row    row-cols-1  row-cols-lg-3 cont">
+                    <div class="col "><p class="test-test test-right">
+                        This is a principle of mine to be able to understand the problem and know the truth even if it
+                        doesn’t benefit me at all, and nobody knows that I was right </p>
+                    </div>
+                    <div class="col ">
+                        <div class="form-group">
+                            <p class="choice">Question № 21</p>
+                            <input type="range" class="range__input" id="Range21" th:field="*{w}" min="-2" max="2"
+                                   step="1" >
+                            <img src="/images/5 points.png" class="five-points"/>
+                        </div>
+                    </div>
+                    <div class="col "><p class="test-test test-left">
+                         I can agree with a popular opinion, if it benefits me and brings me glory</p>
+                    </div>
+                </div>
+                <div class="test_images im-21"></div>
+                <!--22-->
+                <div class="row    row-cols-1  row-cols-lg-3 cont">
+                    <div class="col "><p class="test-test test-right">
+                        If I had my own business, I would set strict rules and formalities to avert awkward situations
+                         </p></div>
+                    <div class="col ">
+                        <div class="form-group">
+                            <p class="choice">Question № 22</p>
+                            <input type="range" class="range__input" id="Range22" th:field="*{u}" min="-2" max="2"
+                                   step="1" >
+                            <img src="/images/5 points.png" class="five-points"/>
+                        </div>
+                    </div>
+                    <div class="col "><p class="test-test test-left">
+                         If I had my own business, I wouldn’t care too much about the formalities, because I don’t think
+                        it’s good to put people in a box</p>
+                    </div>
+                </div>
+                <div class="test_images im-22"></div>
+                <!--23-->
+                <div class="row  row-cols-1  row-cols-lg-3 cont">
+                    <div class="col "><p class="test-test test-right">
+                        Art and creativity is just as important as science and technical progress </p>
+                    </div>
+                    <div class="col ">
+                        <div class="form-group">
+                            <p class="choice">Question № 23</p>
+                            <input type="range" class="range__input" id="Range23" th:field="*{i}" min="-2" max="2"
+                                   step="1" >
+                            <img src="/images/5 points.png" class="five-points"/>
+                        </div>
+                    </div>
+                    <div class="col "><p class="test-test test-left">
+                         Art and creativity means way less compared to science and technical progress
+                        </p>
+                    </div>
+                </div>
+                <div class="test_images im-23"></div>
+
+                <div class="row justify-content-center test-form">
+                <div class=" test-form">
+                    <div class="d-md-flex">
+                        <input type="number" min="16" max="90" required  class="form-ctrl" placeholder="Your age" th:field="*{age}" id="age">
+                    </div>
+                    <div class="d-md-flex">
+                        <input type="text" minlength="3" maxlength="50" required class="form-ctrl" placeholder="Your name" th:field="*{name}">
+                    </div>
+                    <div class="d-md-flex form-check-lbl">
+                        <input type="checkbox" class="form-check-inp" id="check" >
+
+                        <button data-toggle="modal" data-target="#exampleModalScrollable" class="acceptance">
+                            Accept the terms
+                        </button>
+
+                        <!-- Modal -->
+                        <div class="modal fade" id="exampleModalScrollable" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-scrollable" role="document">
+                                <div class="modal-content">
+
+                                    <div class="modal-body">
+                                        1. <b>Introduction</b><br><br>
+                                        Welcome to <b>UHR</b> (“Company”, “we”, “our”, “us”)!<br>
+                                        These Terms of Service (“Terms”, “Terms of Service”) govern your use of our website located at
+                                        <b>http://urhumanresource.com</b> (together or individually “Service”) operated by <b>UHR</b>.<br>
+                                        Our Privacy Policy also governs your use of our Service and explains how we collect, safeguard
+                                        and disclose information that results from your use of our web pages.<br>
+                                        Your agreement with us includes these Terms and our Privacy Policy (“Agreements”). You
+                                        acknowledge that you have read and understood Agreements, and agree to be bound of them.<br>
+                                        If you do not agree with (or cannot comply with) Agreements, then you may not use the Service,
+                                        but please let us know by emailing at <b>infourhr@gmail.com</b> so we can try to find a solution.
+                                        These Terms apply to all visitors, users and others who wish to access or use Service.<br><br>
+                                        2. <b>Communications</b><br><br>
+                                        By using our Service, you agree to subscribe to newsletters, marketing or promotional materials
+                                        and other information we may send. However, you may opt out of receiving any, or all, of these
+                                        communications from us by following the unsubscribe link or by emailing at
+                                        infourhr@gmail.com.<br><br>
+                                        3. <b>Purchases</b><br><br>
+                                        If you wish to purchase any product or service made available through Service (“Purchase”), you
+                                        may be asked to supply certain information relevant to your Purchase including but not limited
+                                        to, your credit or debit card number, the expiration date of your card, your billing address, and
+                                        your shipping information.<br>
+                                        You represent and warrant that: (I) you have the legal right to use any card(s) or other payment
+                                        method(s) in connection with any Purchase; and that (II) the information you supply to us is true,
+                                        correct and complete.<br>
+                                        We may employ the use of third-party services for the purpose of facilitating payment and the
+                                        completion of Purchases. By submitting your information, you grant us the right to provide the
+                                        information to these third parties subject to our Privacy Policy.<br>
+                                        We reserve the right to refuse or cancel your order at any time for reasons including but not
+                                        limited to: product or service availability, errors in the description or price of the product or
+                                        service, error in your order or other reasons.<br>
+                                        We reserve the right to refuse or cancel your order if fraud or an unauthorized or illegal
+                                        transaction is suspected.<br><br>
+                                        4. <b>Contests, Sweepstakes and Promotions</b><br><br>
+
+                                        Any contests, sweepstakes or other promotions (collectively, “Promotions”) made available
+                                        through Service may be governed by rules that are separate from these Terms of Service. If you
+                                        participate in any Promotions, please review the applicable rules as well as our Privacy Policy. If
+                                        the rules for a Promotion conflict with these Terms of Service, Promotion rules will apply.<br><br>
+                                        5. <b>Refunds</b><br><br>
+                                        We issue refunds for Contracts within <b> 14 days</b> of the original purchase of the Contract.<br><br>
+                                        6. <b>Content</b><br><br>
+                                        Content found on or through this Service are the property of UHR or used with permission. You
+                                        may not distribute, modify, transmit, reuse, download, repost, copy, or use said Content, whether
+                                        in whole or in part, for commercial purposes or for personal gain, without express advance
+                                        written permission from us.<br><br>
+                                        7. <b>Prohibited Uses</b><br><br>
+                                        You may use Service only for lawful purposes and in accordance with Terms. You agree not to
+                                        use Service:<br>
+                                        0.1. In any way that violates any applicable national or international law or regulation.<br>
+                                        0.2. For the purpose of exploiting, harming, or attempting to exploit or harm minors in any way
+                                        by exposing them to inappropriate content or otherwise.<br>
+                                        0.3. To transmit, or procure the sending of, any advertising or promotional material, including
+                                        any “junk mail”, “chain letter,” “spam,” or any other similar solicitation.<br>
+                                        0.4. To impersonate or attempt to impersonate Company, a Company employee, another user, or
+                                        any other person or entity.<br>
+                                        0.5. In any way that infringes upon the rights of others, or in any way is illegal, threatening,
+                                        fraudulent, or harmful, or in connection with any unlawful, illegal, fraudulent, or harmful
+                                        purpose or activity.<br>
+                                        0.6. To engage in any other conduct that restricts or inhibits anyone’s use or enjoyment of
+                                        Service, or which, as determined by us, may harm or offend Company or users of Service or
+                                        expose them to liability.<br><br>
+                                        Additionally, you agree not to:<br>
+                                        0.1. Use Service in any manner that could disable, overburden, damage, or impair Service or
+                                        interfere with any other party’s use of Service, including their ability to engage in real time
+                                        activities through Service.<br>
+                                        0.2. Use any robot, spider, or other automatic device, process, or means to access Service for any
+                                        purpose, including monitoring or copying any of the material on Service.<br>
+                                        0.3. Use any manual process to monitor or copy any of the material on Service or for any other
+                                        unauthorized purpose without our prior written consent.<br>
+
+                                        0.4. Use any device, software, or routine that interferes with the proper working of Service.
+                                        0.5. Introduce any viruses, trojan horses, wor<br>ms, logic bombs, or other material which is
+                                        malicious or technologically harmful.<br>
+                                        0.6. Attempt to gain unauthorized access to, interfere with, damage, or disrupt any parts of
+                                        Service, the server on which Service is stored, or any server, computer, or database connected to
+                                        Service.<br>
+                                        0.7. Attack Service via a denial-of-service attack or a distributed denial-of-service attack.<br>
+                                        0.8. Take any action that may damage or falsify Company rating.<br>
+                                        0.9. Otherwise attempt to interfere with the proper working of Service.<br><br>
+                                        8. <b>Analytics</b><br><br>
+                                        We may use third-party Service Providers to monitor and analyze the use of our Service.<br><br>
+                                        9. <b>No Use by Minors</b><br><br>
+                                        Service is intended only for access and use by individuals at least sixteen (16) years old. By
+                                        accessing or using Service, you warrant and represent that you are at least sixteen (16) years of
+                                        age and with the full authority, right, and capacity to enter into this agreement and abide by all of
+                                        the terms and conditions of Terms. If you are not at least sixteen (16) years old, you are
+                                        prohibited from both the access and usage of Service.<br><br>
+                                        10. <b>Intellectual Property</b><br><br>
+                                        Service and its original content (excluding Content provided by users), features and functionality
+                                        are and will remain the exclusive property of UHR and its licensors. Service is protected by
+                                        copyright, trademark, and other laws of and foreign countries. Our trademarks may not be used
+                                        in connection with any product or service without the prior written consent of UHR.<br><br>
+                                        11. <b>Copyright Policy</b><br><br>
+                                        We respect the intellectual property rights of others. It is our policy to respond to any claim that
+                                        Content posted on Service infringes on the copyright or other intellectual property rights
+                                        (“Infringement”) of any person or entity.<br>
+                                        If you are a copyright owner, or authorized on behalf of one, and you believe that the
+                                        copyrighted work has been copied in a way that constitutes copyright infringement, please
+                                        submit your claim via email to infourhr@gmail.com, with the subject line: “Copyright
+                                        Infringement” and include in your claim a detailed description of the alleged Infringement as
+                                        detailed below, under “DMCA Notice and Procedure for Copyright Infringement Claims”<br>
+                                        You may be held accountable for damages (including costs and attorneys’ fees) for
+                                        misrepresentation or bad-faith claims on the infringement of any Content found on and/or
+                                        through Service on your copyright.<br><br>
+                                        12. <b>DMCA Notice and Procedure for Copyright Infringement Claims</b><br><br>
+
+                                        You may submit a notification pursuant to the Digital Millennium Copyright Act (DMCA) by
+                                        providing our Copyright Agent with the following information in writing (see 17 U.S.C
+                                        512(c)(3) for further detail):<br>
+                                        0.1. an electronic or physical signature of the person authorized to act on behalf of the owner of
+                                        the copyright’s interest;<br>
+                                        0.2. a description of the copyrighted work that you claim has been infringed, including the URL
+                                        (i.e., web page address) of the location where the copyrighted work exists or a copy of the
+                                        copyrighted work;<br>
+                                        0.3. identification of the URL or other specific location on Service where the material that you
+                                        claim is infringing is located;<br>
+                                        0.4. your address, telephone number, and email address;<br>
+                                        0.5. a statement by you that you have a good faith belief that the disputed use is not authorized
+                                        by the copyright owner, its agent, or the law;<br>
+                                        0.6. a statement by you, made under penalty of perjury, that the above information in your notice
+                                        is accurate and that you are the copyright owner or authorized to act on the copyright owner’s
+                                        behalf.<br>
+                                        You can contact our Copyright Agent via email at infourhr@gmail.com.<br><br>
+                                        13. <b>Error Reporting and Feedback</b><br><br>
+                                        You may provide us either directly at infourhr@gmail.com or via third party sites and tools with
+                                        information and feedback concerning errors, suggestions for improvements, ideas, problems,
+                                        complaints, and other matters related to our Service (“Feedback”). You acknowledge and agree
+                                        that: (I) you shall not retain, acquire or assert any intellectual property right or other right, title or
+                                        interest in or to the Feedback; (II) Company may have development ideas similar to the
+                                        Feedback; (III) Feedback does not contain confidential information or proprietary information
+                                        from you or any third party; and (IV) Company is not under any obligation of confidentiality
+                                        with respect to the Feedback. In the event the transfer of the ownership to the Feedback is not
+                                        possible due to applicable mandatory laws, you grant Company and its affiliates an exclusive,
+                                        transferable, irrevocable, free-of-charge, sub-licensable, unlimited and perpetual right to use
+                                        (including copy, modify, create derivative works, publish, distribute and commercialize)
+                                        Feedback in any manner and for any purpose.<br><br>
+                                        14. <b>Links to Other Web Sites</b><br><br>
+                                        Our Service may contain links to third-party web sites or services that are not owned or
+                                        controlled by UHR.<br>
+                                        UHR has no control over, and assumes no responsibility for the content, privacy policies, or
+                                        practices of any third-party web sites or services. We do not warrant the offerings of any of these
+                                        entities/individuals or their websites.<br>
+                                        YOU ACKNOWLEDGE AND AGREE THAT COMPANY SHALL NOT BE RESPONSIBLE
+                                        OR LIABLE, DIRECTLY OR INDIRECTLY, FOR ANY DAMAGE OR LOSS CAUSED OR
+                                        ALLEGED TO BE CAUSED BY OR IN CONNECTION WITH USE OF OR RELIANCE ON
+
+                                        ANY SUCH CONTENT, GOODS OR SERVICES AVAILABLE ON OR THROUGH ANY
+                                        SUCH THIRD PARTY WEB SITES OR SERVICES.<br>
+                                        WE STRONGLY ADVISE YOU TO READ THE TERMS OF SERVICE AND PRIVACY
+                                        POLICIES OF ANY THIRD-PARTY WEB SITES OR SERVICES THAT YOU VISIT.<br><br>
+                                        15. <b>Disclaimer of Warranty</b><br><br>
+                                        THESE SERVICES ARE PROVIDED BY COMPANY ON AN “AS IS” AND “AS
+                                        AVAILABLE” BASIS. COMPANY MAKES NO REPRESENTATIONS OR WARRANTIES
+                                        OF ANY KIND, EXPRESS OR IMPLIED, AS TO THE OPERATION OF THEIR SERVICES,
+                                        OR THE INFORMATION, CONTENT OR MATERIALS INCLUDED THEREIN. YOU
+                                        EXPRESSLY AGREE THAT YOUR USE OF THESE SERVICES, THEIR CONTENT, AND
+                                        ANY SERVICES OR ITEMS OBTAINED FROM US IS AT YOUR SOLE RISK.<br>
+                                        NEITHER COMPANY NOR ANY PERSON ASSOCIATED WITH COMPANY MAKES
+                                        ANY WARRANTY OR REPRESENTATION WITH RESPECT TO THE COMPLETENESS,
+                                        SECURITY, RELIABILITY, QUALITY, ACCURACY, OR AVAILABILITY OF THE
+                                        SERVICES. WITHOUT LIMITING THE FOREGOING, NEITHER COMPANY NOR
+                                        ANYONE ASSOCIATED WITH COMPANY REPRESENTS OR WARRANTS THAT THE
+                                        SERVICES, THEIR CONTENT, OR ANY SERVICES OR ITEMS OBTAINED THROUGH
+                                        THE SERVICES WILL BE ACCURATE, RELIABLE, ERROR-FREE, OR
+                                        UNINTERRUPTED, THAT DEFECTS WILL BE CORRECTED, THAT THE SERVICES OR
+                                        THE SERVER THAT MAKES IT AVAILABLE ARE FREE OF VIRUSES OR OTHER
+                                        HARMFUL COMPONENTS OR THAT THE SERVICES OR ANY SERVICES OR ITEMS
+                                        OBTAINED THROUGH THE SERVICES WILL OTHERWISE MEET YOUR NEEDS OR
+                                        EXPECTATIONS.<br>
+                                        COMPANY HEREBY DISCLAIMS ALL WARRANTIES OF ANY KIND, WHETHER
+                                        EXPRESS OR IMPLIED, STATUTORY, OR OTHERWISE, INCLUDING BUT NOT
+                                        LIMITED TO ANY WARRANTIES OF MERCHANTABILITY, NON-INFRINGEMENT,
+                                        AND FITNESS FOR PARTICULAR PURPOSE.
+                                        THE FOREGOING DOES NOT AFFECT ANY WARRANTIES WHICH CANNOT BE
+                                        EXCLUDED OR LIMITED UNDER APPLICABLE LAW.<br><br>
+                                        16. <b>Limitation of Liability</b><br><br>
+                                        EXCEPT AS PROHIBITED BY LAW, YOU WILL HOLD US AND OUR OFFICERS,
+                                        DIRECTORS, EMPLOYEES, AND AGENTS HARMLESS FOR ANY INDIRECT,
+                                        PUNITIVE, SPECIAL, INCIDENTAL, OR CONSEQUENTIAL DAMAGE, HOWEVER IT
+                                        ARISES (INCLUDING ATTORNEYS’ FEES AND ALL RELATED COSTS AND
+                                        EXPENSES OF LITIGATION AND ARBITRATION, OR AT TRIAL OR ON APPEAL, IF
+                                        ANY, WHETHER OR NOT LITIGATION OR ARBITRATION IS INSTITUTED),
+                                        WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE, OR OTHER TORTIOUS
+                                        ACTION, OR ARISING OUT OF OR IN CONNECTION WITH THIS AGREEMENT,
+                                        INCLUDING WITHOUT LIMITATION ANY CLAIM FOR PERSONAL INJURY OR
+                                        PROPERTY DAMAGE, ARISING FROM THIS AGREEMENT AND ANY VIOLATION BY
+                                        YOU OF ANY FEDERAL, STATE, OR LOCAL LAWS, STATUTES, RULES, OR
+                                        REGULATIONS, EVEN IF COMPANY HAS BEEN PREVIOUSLY ADVISED OF THE
+                                        POSSIBILITY OF SUCH DAMAGE. EXCEPT AS PROHIBITED BY LAW, IF THERE IS
+                                        LIABILITY FOUND ON THE PART OF COMPANY, IT WILL BE LIMITED TO THE
+
+                                        AMOUNT PAID FOR THE PRODUCTS AND/OR SERVICES, AND UNDER NO
+                                        CIRCUMSTANCES WILL THERE BE CONSEQUENTIAL OR PUNITIVE DAMAGES.
+                                        SOME STATES DO NOT ALLOW THE EXCLUSION OR LIMITATION OF PUNITIVE,
+                                        INCIDENTAL OR CONSEQUENTIAL DAMAGES, SO THE PRIOR LIMITATION OR
+                                        EXCLUSION MAY NOT APPLY TO YOU.<br><br>
+                                        17. <b>Termination</b><br><br>
+                                        We may terminate or suspend your account and bar access to Service immediately, without prior
+                                        notice or liability, under our sole discretion, for any reason whatsoever and without limitation,
+                                        including but not limited to a breach of Terms.<br>
+                                        If you wish to terminate your account, you may simply discontinue using Service.<br>
+                                        All provisions of Terms which by their nature should survive termination shall survive
+                                        termination, including, without limitation, ownership provisions, warranty disclaimers,
+                                        indemnity and limitations of liability.<br><br>
+                                        18. <b>Governing Law</b><br><br>
+                                        These Terms shall be governed and construed in accordance with the laws of United States of
+                                        America, which governing law applies to agreement without regard to its conflict of law
+                                        provisions.<br>
+                                        Our failure to enforce any right or provision of these Terms will not be considered a waiver of
+                                        those rights. If any provision of these Terms is held to be invalid or unenforceable by a court, the
+                                        remaining provisions of these Terms will remain in effect. These Terms constitute the entire
+                                        agreement between us regarding our Service and supersede and replace any prior agreements we
+                                        might have had between us regarding Service.<br><br>
+                                        19. <b>Changes to Service</b><br><br>
+                                        We reserve the right to withdraw or amend our Service, and any service or material we provide
+                                        via Service, in our sole discretion without notice. We will not be liable if for any reason all or
+                                        any part of Service is unavailable at any time or for any period. From time to time, we may
+                                        restrict access to some parts of Service, or the entire Service, to users, including registered users.<br><br>
+                                        20. <b>Amendments to Terms</b><br><br>
+                                        We may amend Terms at any time by posting the amended terms on this site. It is your
+                                        responsibility to review these Terms periodically.<br>
+                                        Your continued use of the Platform following the posting of revised Terms means that you
+                                        accept and agree to the changes. You are expected to check this page frequently so you are aware
+                                        of any changes, as they are binding on you.<br>
+                                        By continuing to access or use our Service after any revisions become effective, you agree to be
+                                        bound by the revised terms. If you do not agree to the new terms, you are no longer authorized to
+                                        use Service.<br><br>
+                                        21. <b>Waiver and Severability</b><br><br>
+
+                                        No waiver by Company of any term or condition set forth in Terms shall be deemed a further or
+                                        continuing waiver of such term or condition or a waiver of any other term or condition, and any
+                                        failure of Company to assert a right or provision under Terms shall not constitute a waiver of
+                                        such right or provision.<br>
+                                        If any provision of Terms is held by a court or other tribunal of competent jurisdiction to be
+                                        invalid, illegal or unenforceable for any reason, such provision shall be eliminated or limited to
+                                        the minimum extent such that the remaining provisions of Terms will continue in full force and
+                                        effect.<br><br>
+                                        22. <b>Acknowledgement</b><br><br>
+                                        BY USING SERVICE OR OTHER SERVICES PROVIDED BY US, YOU ACKNOWLEDGE
+                                        THAT YOU HAVE READ THESE TERMS OF SERVICE AND AGREE TO BE BOUND BY
+                                        THEM.<br><br>
+                                        23. <b>Contact Us</b><br><br>
+                                        Please send your feedback, comments, requests for technical support by email:
+                                        <b>infourhr@gmail.com.</b>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class=" btn-modal" data-dismiss="modal" >Close</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+                    <div class="submit">
+                        <button type="submit" class="btn btn-primary btn-test" onClick="check()">Next</button>
+                    </div>
+                </div>
+                </div>
+            </form>
+        </div>
+
+</section>
+
+<footer class="footer">
+    <div class="row justify-content-center">
+        <ul class="ftco-footer-social list-unstyled margin-greeting">
+            <li class="ftco-animate"><a href="https://twitter.com/UhrWork" target="_blank"><span
+                    class="icon-twitter"></span></a></li>
+            <li class="ftco-animate"><a href="https://www.facebook.com/UHR-101412644697214/?modal=admin_todo_tour" target="_blank"><span class="icon-facebook"></span></a>
+            </li>
+            <li class="ftco-animate"><a href="https://www.instagram.com/uhr.work/" target="_blank"><span
+                    class="icon-instagram"></span></a></li>
+            <li class="ftco-animate"><a href="https://www.youtube.com/channel/UCAqNI-_SI90gFzBu2Nkyc5A?view_as=subscriber" target="_blank"><span
+                    class="icon-youtube"></span></a></li>
+        </ul>
+    </div>
+</footer>
+
+<!-- loader -->
+<div id="ftco-loader" class="show fullscreen">
+    <svg class="circular" width="48px" height="48px">
+        <circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/>
+        <circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10"
+                stroke="#F96D00"/>
+    </svg>
+</div>
+
+<script src="js/valid.js"></script>
+<script src="js/jquery.min.js"></script>
+<script src="js/jquery-migrate-3.0.1.min.js"></script>
+<script src="js/popper.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/jquery.easing.1.3.js"></script>
+<script src="js/jquery.waypoints.min.js"></script>
+<script src="js/jquery.stellar.min.js"></script>
+<script src="js/owl.carousel.min.js"></script>
+<script src="js/jquery.magnific-popup.min.js"></script>
+<script src="js/aos.js"></script>
+<script src="js/jquery.animateNumber.min.js"></script>
+<script src="js/bootstrap-datepicker.js"></script>
+<script src="js/jquery.timepicker.min.js"></script>
+<script src="js/scrollax.min.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
+<script src="js/google-map.js"></script>
+<script src="js/main.js"></script>
+
+</body>
+</html>
