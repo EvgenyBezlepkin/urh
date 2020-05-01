@@ -19,23 +19,18 @@
 
 <nav th:insert="fragments/navbar.html :: nav"></nav>
 
-
 <section class="ftco-section">
     <div class="container">
         <div class="row justify-content-center ">
             <div class="col-md-7 heading-section ftco-animate text-center">
                 <p>We help find the perfect job for a human and ideal man for the job.</p>
 
-                <p class="p-about-desc">
-                    We have created the algorithm that helps determine your predisposition to occupation, your motivation and identifies the strengths of thinking. <br>
-                    This test is free and understandable to everyone. <br>It does not take much time. <br><br>
-                    In the future we will add the job search function. So, after passing the test, we will be able to offer your profile, <br>test results and resume to the employer. <br><br>
-                    In turn, this test gives the employer the opportunity to see the predisposition, determination and motivation of the future employee.
-                    Our goal is to help people find themselves in life <br>and take a step to a new world.</p>
+                <p class="p-about-desc" th:utext="#{p-about-desc}"></p>
             </div>
         </div>
     </div>
 </section>
+
 <section class="ftco-section">
     <div class="container">
         <div class="row justify-content-center">
@@ -62,13 +57,11 @@
                     <div class="info text-center">
                         <p class="p-name"><a href="#">Kristina Koren</a></p>
                         <div class="text">
-
                             <ul class="p-about">
                                 <li>The author of tests and idea.</li>
                                 <li>Hobbies: photography and fashion industry.</li>
                                 <li>Education: a doctor.</li>
                             </ul>
-
                         </div>
                     </div>
                 </div>
@@ -79,14 +72,12 @@
                     <div class="info text-center">
                         <p class="p-name"><a href="#">Alexey Boychenko</a></p>
                         <div class="text">
-
                             <ul class="p-about">
                                 <li>The author of the idea, creates a strategy,
                                     and negotiates with people.</li>
                                 <li>Hobbies: video production and motorcycles.</li>
                                 <li>Education: an electrician.</li>
                             </ul>
-
                         </div>
                     </div>
                 </div>
@@ -97,13 +88,11 @@
                     <div class="info text-center">
                         <p class="p-name"><a href="#">Evgen Bezlepkin</a></p>
                         <div class="text">
-
                             <ul class="p-about">
                                 <li>The programmer of the site.</li>
                                 <li>Hobbies: philosophizing and artificial intelligence.</li>
                                 <li>Education: an electrician and a programmer.</li>
                             </ul>
-
                         </div>
                     </div>
                 </div>
@@ -111,7 +100,6 @@
         </div>
     </div>
 </section>
-
 
 <footer th:insert="fragments/footer.html :: footer"> </footer>
 

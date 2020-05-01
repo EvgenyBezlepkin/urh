@@ -5,12 +5,10 @@
 
 <body>
 
-<!-- Google Tag Manager (noscript) -->
 <noscript>
     <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TN9PV57"
             height="0" width="0" style="display:none;visibility:hidden"></iframe>
 </noscript>
-<!-- End Google Tag Manager (noscript) -->
 
 <style type="text/css">
     body {
@@ -30,11 +28,7 @@
         <div class="container">
             <div class="row justify-content-center ">
                 <div class="col-md-7 heading-section ftco-animate text-center">
-                    <p class="text-greeting">We have created a test that will help you choose a profession,
-                        will tell about a predisposition to activities. In the future,
-                        based on our test, we can help you get the best job. <br>
-                        The test is absolutely free.</p>
-
+                    <p class="text-greeting" th:utext="#{text-greeting}"></p>
                 </div>
             </div>
         </div>
@@ -49,23 +43,15 @@
         </div>
     </section>
 
-
 </main>
 
 <footer class="footer">
     <div class="row justify-content-center">
         <ul class="ftco-footer-social list-unstyled margin-greeting">
-            <li class="ftco-animate"><a href="https://twitter.com/UhrWork" target="_blank"><span
-                    class="icon-twitter"></span></a></li>
-            <li class="ftco-animate"><a href="https://www.facebook.com/UHR-101412644697214/?modal=admin_todo_tour"
-                                        target="_blank"><span class="icon-facebook"></span></a>
-            </li>
-            <li class="ftco-animate"><a href="https://www.instagram.com/uhr.work/" target="_blank"><span
-                    class="icon-instagram"></span></a></li>
-            <li class="ftco-animate"><a
-                    href="https://www.youtube.com/channel/UCAqNI-_SI90gFzBu2Nkyc5A?view_as=subscriber"
-                    target="_blank"><span
-                    class="icon-youtube"></span></a></li>
+            <li class="ftco-animate"><a href="https://twitter.com/UhrWork" target="_blank"><span class="icon-twitter"></span></a></li>
+            <li class="ftco-animate"><a href="https://www.facebook.com/UHR-101412644697214/?modal=admin_todo_tour" target="_blank"><span class="icon-facebook"></span></a></li>
+            <li class="ftco-animate"><a href="https://www.instagram.com/uhr.work/" target="_blank"><span class="icon-instagram"></span></a></li>
+            <li class="ftco-animate"><a href="https://www.youtube.com/channel/UCAqNI-_SI90gFzBu2Nkyc5A?view_as=subscriber" target="_blank"><span class="icon-youtube"></span></a></li>
         </ul>
     </div>
     <div class="row">
@@ -75,9 +61,7 @@
     </div>
 </footer>
 
-
 <div th:insert="fragments/subfooter.html"></div>
-
 
 </body>
 </html>
