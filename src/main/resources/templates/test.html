@@ -5,19 +5,32 @@
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-162832031-1"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
 
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+
+        gtag('js', new Date());
         gtag('config', 'UA-162832031-1');
     </script>
     <script>
-        !function(f,b,e,v,n,t,s)
-        {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-            n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-            if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-            n.queue=[];t=b.createElement(e);t.async=!0;
-            t.src=v;s=b.getElementsByTagName(e)[0];
-            s.parentNode.insertBefore(t,s)}(window, document,'script',
+        !function (f, b, e, v, n, t, s) {
+            if (f.fbq) return;
+            n = f.fbq = function () {
+                n.callMethod ?
+                    n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+            };
+            if (!f._fbq) f._fbq = n;
+            n.push = n;
+            n.loaded = !0;
+            n.version = '2.0';
+            n.queue = [];
+            t = b.createElement(e);
+            t.async = !0;
+            t.src = v;
+            s = b.getElementsByTagName(e)[0];
+            s.parentNode.insertBefore(t, s)
+        }(window, document, 'script',
             'https://connect.facebook.net/en_US/fbevents.js');
         fbq('init', '249773239548297');
         fbq('track', 'PageView');
@@ -25,10 +38,6 @@
     <title>UHR</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-    <!--<link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet">-->
-    <!--<link href="https://fonts.googleapis.com/css?family=Josefin+Sans" rel="stylesheet">-->
-    <!--<link href="https://fonts.googleapis.com/css?family=Nothing+You+Could+Do" rel="stylesheet">-->
 
     <link rel="stylesheet" href="css/ionicons.min.css">
     <link rel="stylesheet" href="css/animate.css">
@@ -42,8 +51,10 @@
 </head>
 <body>
 <!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TN9PV57"
-                  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<noscript>
+    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TN9PV57" height="0" width="0"
+            style="display:none;visibility:hidden"></iframe>
+</noscript>
 <!-- End Google Tag Manager (noscript) -->
 <style type="text/css">
     body {
@@ -53,13 +64,11 @@
 
 <nav th:insert="fragments/navbar.html :: nav"></nav>
 
-
 <section class="ftco-section">
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-9 heading-sectio text-center">
                 <p class="text">Instruction</p>
-
                 <p class="p-about-desc" th:utext="#{p-about-test-desc}"></p>
             </div>
         </div>
@@ -71,495 +80,540 @@
 
     <div class="test_images im-0"></div>
 
-            <div class="status alert alert-success" style="display: none"></div>
-            <form onSubmit="return func(this);" id="test-form" class="contact" name="contact-form" method="post" th:action="@{/result}"
-                  th:object="${test}" >
-                
-                <!--input 1-->
-                <div class=" row row-cols-1  row-cols-lg-3 cont">
-                    <div class="col ">
-                        <p class="test-test test-right qr1">Usually, I am deeply involved in an activity. I try to find the most successful ways to do it
-                         </p></div>
-                    <div class="col">
-                        <div class="form-group-test">
-                        <p class="choice">Question № 1</p>
-                        <div class="range">
-                            <input class="range__input i1" type="range" th:field="*{a}" value="0" min="-2" max="2" step="1" oninput="slider1('i1', 'ql1', 'qr1')"/>
-                            <img src="/images/5 points.png" class="five-points"/>
-                        </div>
-                        </div>
+    <div class="status alert alert-success" style="display: none"></div>
+    <form onSubmit="func(this)" id="test-form" class="contact" name="contact-form" method="post" th:action="@{/result}"
+          th:object="${test}">
 
+        <!--input 1-->
+        <div class=" row row-cols-1  row-cols-lg-3 cont">
+            <div class="col "><p class="test-test test-right qr1">Usually, I am deeply involved in an activity. I try to
+                find the most successful ways to do it</p></div>
+            <div class="col">
+                <div class="form-group-test">
+                    <p class="choice">Question № 1</p>
+                    <div class="range">
+                        <input class="range__input i1" type="range" th:field="*{a}" value="0" min="-2" max="2" step="1"
+                               oninput="slider1('i1', 'ql1', 'qr1')"/>
+                        <img src="/images/5 points.png" class="five-points"/>
                     </div>
-                    <div class="col ">
-                        <p class="test-test test-left ql1"> Usually, I’m deeply touched by person’s problems. I try to find ways to solve
-                            them</p>
+                </div>
+            </div>
+            <div class="col "><p class="test-test test-left ql1"> Usually, I’m deeply touched by person’s problems. I
+                try to find ways to solve them</p></div>
+        </div>
+        <div class="test_images im-1"></div>
+
+        <!--input 2-->
+        <div class="row  row-cols-1  row-cols-lg-3 cont">
+            <div class="col ">
+                <p class="test-test test-right qr2">It is more important for me that the result of my work gave benefit
+                    for the humanity, even if
+                    I would have to do this to the detriment of myself </p>
+            </div>
+            <div class="col ">
+                <div class="form-group-test">
+                    <p class="choice">Question № 2</p>
+                    <div class="range">
+                        <input class="range__input i2" type="range" th:field="*{b}" value="0" min="-2" max="2" step="1"
+                               oninput="slider1('i2', 'ql2', 'qr2')"/>
+                        <img src="/images/5 points.png" class="five-points"/>
+                    </div>
+                </div>
+            </div>
+            <div class="col ">
+                <p class="test-test test-left ql2"> It is more important for me to get to the truth, even if it would be
+                    unlikely for somebody
+                    and be opposite to the existential viewpoint</p>
+            </div>
+        </div>
+        <div class="test_images im-2"></div>
+
+        <!--input 3-->
+        <div class="row  row-cols-1  row-cols-lg-3 cont">
+            <div class="col ">
+                <p class="test-test test-right qr3">Creating something new is essential part of work, which I would like
+                    to do
+                </p>
+            </div>
+            <div class="col ">
+                <div class="form-group-test">
+                    <p class="choice">Question № 3</p>
+                    <div class="range">
+                        <input class="range__input i3" type="range" th:field="*{d}" value="0" min="-2" max="3" step="1"
+                               oninput="slider2('i3', 'ql3', 'qr3')"
+                        />
+                        <img src="/images/6 points.png" class="six-points"/>
                     </div>
                 </div>
 
-                <div class="test_images im-1"></div>
+            </div>
+            <div class="col ">
+                <p class="test-test test-left ql3"> Managing people is essential part of work, which I would like to do
+                </p>
+            </div>
+        </div>
+        <div class="test_images im-3"></div>
 
-                <!--input 2-->
-                <div class="row  row-cols-1  row-cols-lg-3 cont">
-                    <div class="col ">
-                        <p class="test-test test-right qr2">It is more important for me that the result of my work gave benefit for the humanity, even if
-                            I would have to do this to the detriment of myself </p>
-                    </div>
-                    <div class="col ">
-                        <div class="form-group-test">
-                        <p class="choice">Question № 2</p>
-                        <div class="range">
-                            <input class="range__input i2" type="range" th:field="*{b}" value="0" min="-2" max="2" step="1" oninput="slider1('i2', 'ql2', 'qr2')"/>
-                            <img src="/images/5 points.png" class="five-points"/>
-                        </div>
-                        </div>
-                    </div>
-                    <div class="col ">
-                        <p class="test-test test-left ql2"> It is more important for me to get to the truth, even if it would be unlikely for somebody
-                            and be opposite to the existential viewpoint</p>
-                    </div>
+        <!--input 4-->
+        <div class="row  row-cols-1  row-cols-lg-3 cont">
+            <div class="col ">
+                <p class="test-test test-right qr4">If my idea is not appreciated by people, I will get upset, because I
+                    created it for their own
+                    good </p>
+            </div>
+            <div class="col ">
+                <div class="form-group-test">
+                    <p class="choice">Question № 4</p>
+                    <input type="range" class="range__input i4" id="Range4" th:field="*{e}" min="-2" max="3"
+                           oninput="slider2('i4', 'ql4', 'qr4')"
+                           step="1"/>
+                    <img src="/images/6 points.png" class="six-points"/>
                 </div>
-                <div class="test_images im-2"></div>
-                <!--input 3-->
-                <div class="row  row-cols-1  row-cols-lg-3 cont">
-                    <div class="col ">
-                        <p class="test-test test-right qr3">Creating something new is essential part of work, which I would like to do
-                             </p>
-                    </div>
-                    <div class="col ">
-                        <div class="form-group-test">
-                        <p class="choice">Question № 3</p>
-                        <div class="range">
-                            <input class="range__input i3" type="range" th:field="*{d}" value="0" min="-2" max="3" step="1" oninput="slider2('i3', 'ql3', 'qr3')"
-                                   />
-                            <img src="/images/6 points.png" class="six-points"/>
-                        </div>
-                        </div>
 
-                    </div>
-                    <div class="col ">
-                        <p class="test-test test-left ql3"> Managing people is essential part of work, which I would like to do
-                            </p>
-                    </div>
-                </div>
-                <div class="test_images im-3"></div>
-                <!--input 4-->
-                <div class="row  row-cols-1  row-cols-lg-3 cont">
-                    <div class="col ">
-                        <p class="test-test test-right qr4">If my idea is not appreciated by people, I will get upset, because I created it for their own
-                            good </p>
-                    </div>
-                    <div class="col ">
-                        <div class="form-group-test">
-                            <p class="choice">Question № 4</p>
-                            <input type="range" class="range__input i4" id="Range4" th:field="*{e}" min="-2" max="3" oninput="slider2('i4', 'ql4', 'qr4')"
-                                   step="1" />
-                            <img src="/images/6 points.png" class="six-points"/>
-                        </div>
+            </div>
+            <div class="col "><p class="test-test test-left ql4">
+                If my idea is not appreciated by people, I will get upset, because they don’t understand the
+                beauty of my concepts</p>
+            </div>
+        </div>
+        <div class="test_images im-4"></div>
 
-                    </div>
-                    <div class="col "><p class="test-test test-left ql4">
-                         If my idea is not appreciated by people, I will get upset, because they don’t understand the
-                        beauty of my concepts</p>
-                    </div>
+        <!--input 5-->
+        <div class="row  row-cols-1  row-cols-lg-3 cont">
+            <div class="col "><p class="test-test test-right qr5">
+                To acquire a skill it’s enough to perform it accurately, without theoretical learning of the
+                process. </p>
+            </div>
+            <div class="col ">
+                <div class="form-group-test">
+                    <p class="choice">Question № 5</p>
+                    <input type="range" class="range__input i5" id="Range5" th:field="*{f}" min="-2" max="2" step="1"
+                           oninput="slider1('i5', 'ql5', 'qr5')">
+                    <img src="/images/5 points.png" class="five-points"/>
                 </div>
-                <div class="test_images im-4"></div>
-                <!--input 5-->
-                <div class="row  row-cols-1  row-cols-lg-3 cont">
-                    <div class="col "><p class="test-test test-right qr5">
-                        To acquire a skill it’s enough to perform it accurately, without theoretical learning of the
-                        process. </p>
-                    </div>
-                    <div class="col ">
-                        <div class="form-group-test">
-                            <p class="choice">Question № 5</p>
-                            <input type="range" class="range__input i5" id="Range5" th:field="*{f}" min="-2" max="2" step="1" oninput="slider1('i5', 'ql5', 'qr5')">
-                            <img src="/images/5 points.png" class="five-points"/>
-                        </div>
 
-                    </div>
-                    <div class="col ">
-                        <p class="test-test test-left ql5">
-                        To acquire a skill I must to learn the theory clearly, and only after that start performing it.
-                        </p></div>
-                </div>
-                <div class="test_images im-5"></div>
-                <!--input 6-->
-                <div class="row  row-cols-1  row-cols-lg-3 cont">
-                    <div class="col "><p class="test-test test-right qr6">
-                        I try not to be like all people, but have my own point of view all-around, even if it’s
-                        problematic for me </p>
-                    </div>
-                    <div class="col ">
-                        <div class="form-group-test">
-                            <p class="choice">Question № 6</p>
-                            <input type="range" class="range__input i6" id="Range6" th:field="*{g}" min="-2" max="2" step="1" oninput="slider1('i6', 'ql6', 'qr6')">
-                            <img src="/images/5 points.png" class="five-points"/>
-                        </div>
-                    </div>
-                    <div class="col ">
-                        <p class="test-test test-left ql6">
-                            I try not to disagree with most, not to be an upstart, but just to do my work</p>
-                    </div>
-                </div>
-                <div class="test_images im-6"></div>
-                <!--7-->
-                <div class="row  row-cols-1  row-cols-lg-3 cont">
-                    <div class="col "><p class="test-test test-right qr7">
-                        It’s more important for me that my occupation provides stability </p>
-                    </div>
-                    <div class="col ">
-                        <div class="form-group-test">
-                            <p class="choice">Question № 7</p>
-                            <input type="range" class="range__input i7" id="Range7" th:field="*{h}" min="-2" max="3" oninput="slider2('i7', 'ql7', 'qr7')"
-                                   step="1" >
-                            <img src="/images/6 points.png" class="six-points"/>
-                        </div>
-                    </div>
-                    <div class="col "><p class="test-test test-left ql7">
-                         It’s more important for me that my occupation provided an ability to help other people
-                        </p>
-                    </div>
-                </div>
-                <div class="test_images im-7"></div>
-                <!--8-->
-                <div class="row  row-cols-1  row-cols-lg-3 cont">
-                    <div class="col "><p class="test-test test-right qr8">
-                        I want to and I can give specific instructions to people on what they must do; I can be
-                        responsible for them </p>
-                    </div>
-                    <div class="col ">
-                        <div class="form-group-test">
-                            <p class="choice">Question № 8</p>
-                            <input type="range" class="range__input i8" id="Range8" th:field="*{k}" min="-2" max="2" oninput="slider1('i8', 'ql8', 'qr8')"
-                                   step="1" >
-                            <img src="/images/5 points.png" class="five-points"/>
-                        </div>
-                    </div>
-                    <div class="col "><p class="test-test test-left ql8">
-                         I would like to get specific instructions for each action; have an ability to reach out to more
-                        experienced employer for the advice</p>
-                    </div>
-                </div>
-                <div class="test_images im-8"></div>
-                <!--9-->
-                <div class="row  row-cols-1  row-cols-lg-3 cont">
-                    <div class="col "><p class="test-test test-right qr9">
-                        I would like to be a person who is passionate about their own work and just enjoys a well-done
-                        task, regardless of my position </p>
-                    </div>
-                    <div class="col ">
-                        <div class="form-group-test">
-                            <p class="choice">Question № 9</p>
-                            <input type="range" class="range__input i9" id="Range9" th:field="*{l}" min="-2" max="2" oninput="slider1('i9', 'ql9', 'qr9')"
-                                   step="1" >
-                            <img src="/images/5 points.png" class="five-points"/>
-                        </div>
-                    </div>
-                    <div class="col "><p class="test-test test-left ql9">
-                         I would like to be a person who has accomplished a lot, achieved success</p>
-                    </div>
-                </div>
-                <div class="test_images im-9"></div>
-                <!--10-->
-                <div class="row  row-cols-1  row-cols-lg-3 cont">
-                    <div class="col "><p class="test-test test-right qr10">
-                        I see the world depending on my mood; I see many things in different ways </p>
-                    </div>
-                    <div class="col ">
-                        <div class="form-group-test">
-                            <p class="choice">Question № 10</p>
-                            <input type="range" class="range__input i10" id="Range10" th:field="*{m}" min="-2" max="2" oninput="slider1('i10', 'ql10', 'qr10')"
-                                   step="1" >
-                            <img src="/images/5 points.png" class="five-points"/>
-                        </div>
-                    </div>
-                    <div class="col "><p class="test-test test-left ql10">
-                         I try to see the world objectively, not allowing my mood or emotion to influence my perception
-                        </p></div>
-                </div>
-                <div class="test_images im-10"></div>
-                <!--11-->
-                <div class="row  row-cols-1  row-cols-lg-3 cont">
-                    <div class="col "><p class="test-test test-right qr11">
-                        I set big goals, even if I can’t always achieve them </p>
-                    </div>
-                    <div class="col ">
-                        <div class="form-group-test">
-                            <p class="choice">Question № 11</p>
-                            <input type="range" class="range__input i11" id="Range11" th:field="*{n}" min="-2" max="2" oninput="slider1('i11', 'ql11', 'qr11')"
-                                   step="1" >
-                            <img src="/images/5 points.png" class="five-points"/>
-                        </div>
-                    </div>
-                    <div class="col "><p class="test-test test-left ql11">
-                         I set humble goals, but I know exactly, that I can achieve them</p>
-                    </div>
-                </div>
-                <div class="test_images im-11"></div>
-                <!--12-->
-                <div class="row  row-cols-1  row-cols-lg-3 cont">
-                    <div class="col "><p class="test-test test-right qr12">
-                        Sometimes, I am ready to work on tasks, that I don’t really like, as long as my overall goal
-                        depends on it in the long run </p>
-                    </div>
-                    <div class="col ">
-                        <div class="form-group-test">
-                            <p class="choice">Question № 12</p>
-                            <input type="range" class="range__input i12" id="Range12" th:field="*{o}" min="-2" max="2" oninput="slider1('i12', 'ql12', 'qr12')"
-                                   step="1" >
-                            <img src="/images/5 points.png" class="five-points"/>
-                        </div>
-                    </div>
-                    <div class="col "><p class="test-test test-left ql12">
-                         I am completely against the tasks, that I don’t enjoy, even if it could help my goals in the
-                        long run</p>
-                    </div>
-                </div>
-                <div class="test_images im-12"></div>
-                <!--13-->
-                <div class="row  row-cols-1  row-cols-lg-3 cont">
-                    <div class="col "><p class="test-test test-right qr13">
-                        I am ready to invest time and effort even without salary, if it would satisfy my world vision
-                         </p></div>
-                    <div class="col ">
-                        <div class="form-group-test">
-                            <p class="choice">Question № 13</p>
-                            <input type="range" class="range__input i13" id="Range13" th:field="*{p}" min="-2" max="3" oninput="slider2('i13', 'ql13', 'qr13')"
-                                   step="1" >
-                            <img src="/images/6 points.png" class="six-points"/>
-                        </div>
-                    </div>
-                    <div class="col "><p class="test-test test-left ql13">
-                         I am ready to invest my own money in the developing of business, even if I would be at a risk of
-                        losing it</p>
-                    </div>
-                </div>
-                <div class="test_images im-13"></div>
-                <!--14-->
-                <div class="row    row-cols-1  row-cols-lg-3 cont">
-                    <div class="col "><p class="test-test test-right qr14">
-                        I can convince people to do something, persuade them to make a decision that benefits me
-                         </p>
-                    </div>
-                    <div class="col ">
-                        <div class="form-group-test">
-                            <p class="choice">Question № 14</p>
-                            <input type="range" class="range__input i14" id="Range14" th:field="*{r}" min="-2" max="2" oninput="slider1('i14', 'ql14', 'qr14')"
-                                   step="1" >
-                            <img src="/images/5 points.png" class="five-points"/>
-                        </div>
-                    </div>
-                    <div class="col "><p class="test-test test-left ql14">
-                         Truth is the key to authority. Being able to convince someone means way less.
-                        </p>
-                    </div>
-                </div>
-                <div class="test_images im-14"></div>
-                <!--15-->
-                <div class="row    row-cols-1  row-cols-lg-3 cont">
-                    <div class="col "><p class="test-test test-right qr15">
-                        I would like to do work that helps make this world a better place </p>
-                    </div>
-                    <div class="col ">
-                        <div class="form-group-test">
-                            <p class="choice">Question № 15</p>
-                            <input type="range" class="range__input i15" id="Range15" th:field="*{s}" min="-2" max="3" oninput="slider2('i15', 'ql15', 'qr15')"
-                                   step="1" >
-                            <img src="/images/6 points.png" class="six-points"/>
-                        </div>
-                    </div>
-                    <div class="col "><p class="test-test test-left ql15">
-                         I would like to work for my own goals and well-being</p>
-                    </div>
-                </div>
-                <div class="test_images im-15"></div>
-                <!--16-->
-                <div class="row    row-cols-1  row-cols-lg-3 cont">
-                    <div class="col "><p class="test-test test-right qr16">
-                        I would prefer to spend my work time in laboratory / workshop / isolated office, without being
-                        distracted and talking with colleagues </p>
-                    </div>
-                    <div class="col ">
-                        <div class="form-group-test">
-                            <p class="choice">Question № 16</p>
-                            <input type="range" class="range__input i16" id="Range16" th:field="*{t}" min="-2" max="2" oninput="slider1('i16', 'ql16', 'qr16')"
-                                   step="1" >
-                            <img src="/images/5 points.png" class="five-points"/>
-                        </div>
-                    </div>
-                    <div class="col "><p class="test-test test-left ql16">
-                         I would prefer to spend my work time in a friendly environment, to be able to take a break
-                        sometimes</p>
-                    </div>
-                </div>
-                <div class="test_images im-16"></div>
-                <!--17-->
-                <div class="row    row-cols-1  row-cols-lg-3 cont">
-                    <div class="col "><p class="test-test test-right qr17">
-                         If I suddenly got a big amount of money, I would invest into a good cause, like buying equipment
-                        for the poor hospital or building a playground, etc.</p>
-                    </div>
-                    <div class="col ">
-                        <div class="form-group-test">
-                            <p class="choice">Question № 17</p>
-                            <input type="range" class="range__input i17" id="Range17" th:field="*{x}" min="-2" max="3" oninput="slider2('i17', 'ql17', 'qr17')"
-                                   step="1" >
-                            <img src="/images/6 points.png" class="six-points"/>
-                        </div>
-                    </div>
-                    <div class="col "><p class="test-test test-left ql17">
-                         If I suddenly got a big amount of money, I would invest it in my own business
-                        </p>
-                    </div>
-                </div>
-                <div class="test_images im-17"></div>
-                <!--18-->
-                <div class="row    row-cols-1  row-cols-lg-3 cont">
-                    <div class="col "><p class="test-test test-right qr18">
-                        I might not understand the intricate details of my work, but I could easily manage the work of
-                        others and strategize for the organization </p>
-                    </div>
-                    <div class="col ">
-                        <div class="form-group-test">
-                            <p class="choice">Question № 18</p>
-                            <input type="range" class="range__input i18" id="Range18" th:field="*{y}" min="-2" max="2" oninput="slider1('i18', 'ql18', 'qr18')"
-                                   step="1" >
-                            <img src="/images/5 points.png" class="five-points"/>
-                        </div>
-                    </div>
-                    <div class="col "><p class="test-test test-left ql18">
-                         I would prefer to have mastered my occupation, even if I don’t have a high position, I would
-                        like to know the nuances of my profession</p>
-                    </div>
-                </div>
-                <div class="test_images im-18"></div>
-                <!--19-->
-                <div class="row    row-cols-1  row-cols-lg-3 cont">
-                    <div class="col "><p class="test-test test-right qr19">
-                        I act more effectively if I have certain instructions, that bring the guaranteed results </p>
-                    </div>
-                    <div class="col ">
-                        <div class="form-group-test">
-                            <p class="choice">Question № 19</p>
-                            <input type="range" class="range__input i19" id="Range19" th:field="*{z}" min="-2" max="2" oninput="slider1('i19', 'ql19', 'qr19')"
-                                   step="1" >
-                            <img src="/images/5 points.png" class="five-points"/>
-                        </div>
-                    </div>
-                    <div class="col "><p class="test-test test-left ql19">
-                         I can create new methods of achieving some results for a greater cause</p>
-                    </div>
-                </div>
-                <div class="test_images im-19"></div>
-                <!--20-->
-                <div class="row    row-cols-1  row-cols-lg-3 cont">
-                    <div class="col "><p class="test-test test-right qr20">
-                        My work could be helping people in need </p>
-                    </div>
-                    <div class="col ">
-                        <div class="form-group-test">
-                            <p class="choice">Question № 20</p>
-                            <input type="range" class="range__input i20" id="Range20" th:field="*{q}" min="-2" max="2" oninput="slider1('i20', 'ql20', 'qr20')"
-                                   step="1" >
-                            <img src="/images/5 points.png" class="five-points"/>
-                        </div>
-                    </div>
-                    <div class="col "><p class="test-test test-left ql20">
-                         My work could be targeting a smaller circle, who can really appreciate it and afford it
-                        </p>
-                    </div>
-                </div>
-                <div class="test_images im-20"></div>
-                <!--21-->
-                <div class="row    row-cols-1  row-cols-lg-3 cont">
-                    <div class="col "><p class="test-test test-right qr21">
-                        This is a principle of mine to be able to understand the problem and know the truth even if it
-                        doesn’t benefit me at all, and nobody knows that I was right </p>
-                    </div>
-                    <div class="col ">
-                        <div class="form-group-test">
-                            <p class="choice">Question № 21</p>
-                            <input type="range" class="range__input i21" id="Range21" th:field="*{w}" min="-2" max="2" oninput="slider1('i21', 'ql21', 'qr21')"
-                                   step="1" >
-                            <img src="/images/5 points.png" class="five-points"/>
-                        </div>
-                    </div>
-                    <div class="col "><p class="test-test test-left ql21">
-                         I can agree with a popular opinion, if it benefits me and brings me glory</p>
-                    </div>
-                </div>
-                <div class="test_images im-21"></div>
-                <!--22-->
-                <div class="row    row-cols-1  row-cols-lg-3 cont">
-                    <div class="col "><p class="test-test test-right qr22">
-                        If I had my own business, I would set strict rules and formalities to avert awkward situations
-                         </p></div>
-                    <div class="col ">
-                        <div class="form-group-test">
-                            <p class="choice">Question № 22</p>
-                            <input type="range" class="range__input i22" id="Range22" th:field="*{u}" min="-2" max="2" oninput="slider1('i22', 'ql22', 'qr22')"
-                                   step="1" >
-                            <img src="/images/5 points.png" class="five-points"/>
-                        </div>
-                    </div>
-                    <div class="col "><p class="test-test test-left ql22">
-                         If I had my own business, I wouldn’t care too much about the formalities, because I don’t think
-                        it’s good to put people in a box</p>
-                    </div>
-                </div>
-                <div class="test_images im-22"></div>
-                <!--23-->
-                <div class="row  row-cols-1  row-cols-lg-3 cont">
-                    <div class="col "><p class="test-test test-right qr23">
-                        Art and creativity is just as important as science and technical progress </p>
-                    </div>
-                    <div class="col ">
-                        <div class="form-group-test">
-                            <p class="choice">Question № 23</p>
-                            <input type="range" class="range__input i23" id="Range23" th:field="*{i}" min="-2" max="2" oninput="slider1('i23', 'ql23', 'qr23')"
-                                   step="1" >
-                            <img src="/images/5 points.png" class="five-points"/>
-                        </div>
-                    </div>
-                    <div class="col "><p class="test-test test-left ql23">
-                         Art and creativity means way less compared to science and technical progress
-                        </p>
-                    </div>
-                </div>
-                <div class="test_images im-23"></div>
+            </div>
+            <div class="col ">
+                <p class="test-test test-left ql5">
+                    To acquire a skill I must to learn the theory clearly, and only after that start performing it.
+                </p></div>
+        </div>
+        <div class="test_images im-5"></div>
 
-                <div class="row justify-content-center test-form">
-                <div class=" test-form">
-                    <div class="d-md-flex">
-                        <input type="number" min="16" max="90" required  class="form-ctrl" placeholder="Your age" th:field="*{age}" id="age">
-                    </div>
-                    <div class="d-md-flex">
-                        <input type="text" minlength="3" maxlength="50" required class="form-ctrl" placeholder="Your name" th:field="*{name}">
-                    </div>
-                    <div class="d-md-flex form-check-lbl">
-                        <input type="checkbox" class="form-check-inp" id="check" >
+        <!--input 6-->
+        <div class="row  row-cols-1  row-cols-lg-3 cont">
+            <div class="col "><p class="test-test test-right qr6">
+                I try not to be like all people, but have my own point of view all-around, even if it’s
+                problematic for me </p>
+            </div>
+            <div class="col ">
+                <div class="form-group-test">
+                    <p class="choice">Question № 6</p>
+                    <input type="range" class="range__input i6" id="Range6" th:field="*{g}" min="-2" max="2" step="1"
+                           oninput="slider1('i6', 'ql6', 'qr6')">
+                    <img src="/images/5 points.png" class="five-points"/>
+                </div>
+            </div>
+            <div class="col ">
+                <p class="test-test test-left ql6">
+                    I try not to disagree with most, not to be an upstart, but just to do my work</p>
+            </div>
+        </div>
+        <div class="test_images im-6"></div>
 
-                        <button data-toggle="modal" data-target="#exampleModalScrollable" class="acceptance">
-                            Accept the terms
-                        </button>
+        <!--7-->
+        <div class="row  row-cols-1  row-cols-lg-3 cont">
+            <div class="col "><p class="test-test test-right qr7">
+                It’s more important for me that my occupation provides stability </p>
+            </div>
+            <div class="col ">
+                <div class="form-group-test">
+                    <p class="choice">Question № 7</p>
+                    <input type="range" class="range__input i7" id="Range7" th:field="*{h}" min="-2" max="3"
+                           oninput="slider2('i7', 'ql7', 'qr7')"
+                           step="1">
+                    <img src="/images/6 points.png" class="six-points"/>
+                </div>
+            </div>
+            <div class="col "><p class="test-test test-left ql7">
+                It’s more important for me that my occupation provided an ability to help other people
+            </p>
+            </div>
+        </div>
+        <div class="test_images im-7"></div>
 
-                        <!-- Modal -->
-                        <div th:insert="fragments/terms.html"> </div>
+        <!--8-->
+        <div class="row  row-cols-1  row-cols-lg-3 cont">
+            <div class="col "><p class="test-test test-right qr8">
+                I want to and I can give specific instructions to people on what they must do; I can be
+                responsible for them </p>
+            </div>
+            <div class="col ">
+                <div class="form-group-test">
+                    <p class="choice">Question № 8</p>
+                    <input type="range" class="range__input i8" id="Range8" th:field="*{k}" min="-2" max="2"
+                           oninput="slider1('i8', 'ql8', 'qr8')"
+                           step="1">
+                    <img src="/images/5 points.png" class="five-points"/>
+                </div>
+            </div>
+            <div class="col "><p class="test-test test-left ql8">
+                I would like to get specific instructions for each action; have an ability to reach out to more
+                experienced employer for the advice</p>
+            </div>
+        </div>
+        <div class="test_images im-8"></div>
+
+        <!--9-->
+        <div class="row  row-cols-1  row-cols-lg-3 cont">
+            <div class="col "><p class="test-test test-right qr9">
+                I would like to be a person who is passionate about their own work and just enjoys a well-done
+                task, regardless of my position </p>
+            </div>
+            <div class="col ">
+                <div class="form-group-test">
+                    <p class="choice">Question № 9</p>
+                    <input type="range" class="range__input i9" id="Range9" th:field="*{l}" min="-2" max="2"
+                           oninput="slider1('i9', 'ql9', 'qr9')"
+                           step="1">
+                    <img src="/images/5 points.png" class="five-points"/>
+                </div>
+            </div>
+            <div class="col "><p class="test-test test-left ql9">
+                I would like to be a person who has accomplished a lot, achieved success</p>
+            </div>
+        </div>
+        <div class="test_images im-9"></div>
+
+        <!--10-->
+        <div class="row  row-cols-1  row-cols-lg-3 cont">
+            <div class="col "><p class="test-test test-right qr10">
+                I see the world depending on my mood; I see many things in different ways </p>
+            </div>
+            <div class="col ">
+                <div class="form-group-test">
+                    <p class="choice">Question № 10</p>
+                    <input type="range" class="range__input i10" id="Range10" th:field="*{m}" min="-2" max="2"
+                           oninput="slider1('i10', 'ql10', 'qr10')"
+                           step="1">
+                    <img src="/images/5 points.png" class="five-points"/>
+                </div>
+            </div>
+            <div class="col "><p class="test-test test-left ql10">
+                I try to see the world objectively, not allowing my mood or emotion to influence my perception
+            </p></div>
+        </div>
+        <div class="test_images im-10"></div>
+
+        <!--11-->
+        <div class="row  row-cols-1  row-cols-lg-3 cont">
+            <div class="col "><p class="test-test test-right qr11">
+                I set big goals, even if I can’t always achieve them </p>
+            </div>
+            <div class="col ">
+                <div class="form-group-test">
+                    <p class="choice">Question № 11</p>
+                    <input type="range" class="range__input i11" id="Range11" th:field="*{n}" min="-2" max="2"
+                           oninput="slider1('i11', 'ql11', 'qr11')"
+                           step="1">
+                    <img src="/images/5 points.png" class="five-points"/>
+                </div>
+            </div>
+            <div class="col "><p class="test-test test-left ql11">
+                I set humble goals, but I know exactly, that I can achieve them</p>
+            </div>
+        </div>
+        <div class="test_images im-11"></div>
+
+        <!--12-->
+        <div class="row  row-cols-1  row-cols-lg-3 cont">
+            <div class="col "><p class="test-test test-right qr12">
+                Sometimes, I am ready to work on tasks, that I don’t really like, as long as my overall goal
+                depends on it in the long run </p>
+            </div>
+            <div class="col ">
+                <div class="form-group-test">
+                    <p class="choice">Question № 12</p>
+                    <input type="range" class="range__input i12" id="Range12" th:field="*{o}" min="-2" max="2"
+                           oninput="slider1('i12', 'ql12', 'qr12')"
+                           step="1">
+                    <img src="/images/5 points.png" class="five-points"/>
+                </div>
+            </div>
+            <div class="col "><p class="test-test test-left ql12">
+                I am completely against the tasks, that I don’t enjoy, even if it could help my goals in the
+                long run</p>
+            </div>
+        </div>
+        <div class="test_images im-12"></div>
+
+        <!--13-->
+        <div class="row  row-cols-1  row-cols-lg-3 cont">
+            <div class="col "><p class="test-test test-right qr13">
+                I am ready to invest time and effort even without salary, if it would satisfy my world vision
+            </p></div>
+            <div class="col ">
+                <div class="form-group-test">
+                    <p class="choice">Question № 13</p>
+                    <input type="range" class="range__input i13" id="Range13" th:field="*{p}" min="-2" max="3"
+                           oninput="slider2('i13', 'ql13', 'qr13')"
+                           step="1">
+                    <img src="/images/6 points.png" class="six-points"/>
+                </div>
+            </div>
+            <div class="col "><p class="test-test test-left ql13">
+                I am ready to invest my own money in the developing of business, even if I would be at a risk of
+                losing it</p>
+            </div>
+        </div>
+        <div class="test_images im-13"></div>
+
+        <!--14-->
+        <div class="row    row-cols-1  row-cols-lg-3 cont">
+            <div class="col "><p class="test-test test-right qr14">
+                I can convince people to do something, persuade them to make a decision that benefits me
+            </p>
+            </div>
+            <div class="col ">
+                <div class="form-group-test">
+                    <p class="choice">Question № 14</p>
+                    <input type="range" class="range__input i14" id="Range14" th:field="*{r}" min="-2" max="2"
+                           oninput="slider1('i14', 'ql14', 'qr14')"
+                           step="1">
+                    <img src="/images/5 points.png" class="five-points"/>
+                </div>
+            </div>
+            <div class="col "><p class="test-test test-left ql14">
+                Truth is the key to authority. Being able to convince someone means way less.
+            </p>
+            </div>
+        </div>
+        <div class="test_images im-14"></div>
+
+        <!--15-->
+        <div class="row    row-cols-1  row-cols-lg-3 cont">
+            <div class="col "><p class="test-test test-right qr15">
+                I would like to do work that helps make this world a better place </p>
+            </div>
+            <div class="col ">
+                <div class="form-group-test">
+                    <p class="choice">Question № 15</p>
+                    <input type="range" class="range__input i15" id="Range15" th:field="*{s}" min="-2" max="3"
+                           oninput="slider2('i15', 'ql15', 'qr15')"
+                           step="1">
+                    <img src="/images/6 points.png" class="six-points"/>
+                </div>
+            </div>
+            <div class="col "><p class="test-test test-left ql15">
+                I would like to work for my own goals and well-being</p>
+            </div>
+        </div>
+        <div class="test_images im-15"></div>
+
+        <!--16-->
+        <div class="row    row-cols-1  row-cols-lg-3 cont">
+            <div class="col "><p class="test-test test-right qr16">
+                I would prefer to spend my work time in laboratory / workshop / isolated office, without being
+                distracted and talking with colleagues </p>
+            </div>
+            <div class="col ">
+                <div class="form-group-test">
+                    <p class="choice">Question № 16</p>
+                    <input type="range" class="range__input i16" id="Range16" th:field="*{t}" min="-2" max="2"
+                           oninput="slider1('i16', 'ql16', 'qr16')"
+                           step="1">
+                    <img src="/images/5 points.png" class="five-points"/>
+                </div>
+            </div>
+            <div class="col "><p class="test-test test-left ql16">
+                I would prefer to spend my work time in a friendly environment, to be able to take a break
+                sometimes</p>
+            </div>
+        </div>
+        <div class="test_images im-16"></div>
+
+        <!--17-->
+        <div class="row    row-cols-1  row-cols-lg-3 cont">
+            <div class="col "><p class="test-test test-right qr17">
+                If I suddenly got a big amount of money, I would invest into a good cause, like buying equipment
+                for the poor hospital or building a playground, etc.</p>
+            </div>
+            <div class="col ">
+                <div class="form-group-test">
+                    <p class="choice">Question № 17</p>
+                    <input type="range" class="range__input i17" id="Range17" th:field="*{x}" min="-2" max="3"
+                           oninput="slider2('i17', 'ql17', 'qr17')"
+                           step="1">
+                    <img src="/images/6 points.png" class="six-points"/>
+                </div>
+            </div>
+            <div class="col "><p class="test-test test-left ql17">
+                If I suddenly got a big amount of money, I would invest it in my own business
+            </p>
+            </div>
+        </div>
+        <div class="test_images im-17"></div>
+
+        <!--18-->
+        <div class="row    row-cols-1  row-cols-lg-3 cont">
+            <div class="col "><p class="test-test test-right qr18">
+                I might not understand the intricate details of my work, but I could easily manage the work of
+                others and strategize for the organization </p>
+            </div>
+            <div class="col ">
+                <div class="form-group-test">
+                    <p class="choice">Question № 18</p>
+                    <input type="range" class="range__input i18" id="Range18" th:field="*{y}" min="-2" max="2"
+                           oninput="slider1('i18', 'ql18', 'qr18')"
+                           step="1">
+                    <img src="/images/5 points.png" class="five-points"/>
+                </div>
+            </div>
+            <div class="col "><p class="test-test test-left ql18">
+                I would prefer to have mastered my occupation, even if I don’t have a high position, I would
+                like to know the nuances of my profession</p>
+            </div>
+        </div>
+        <div class="test_images im-18"></div>
+
+        <!--19-->
+        <div class="row    row-cols-1  row-cols-lg-3 cont">
+            <div class="col "><p class="test-test test-right qr19">
+                I act more effectively if I have certain instructions, that bring the guaranteed results </p>
+            </div>
+            <div class="col ">
+                <div class="form-group-test">
+                    <p class="choice">Question № 19</p>
+                    <input type="range" class="range__input i19" id="Range19" th:field="*{z}" min="-2" max="2"
+                           oninput="slider1('i19', 'ql19', 'qr19')"
+                           step="1">
+                    <img src="/images/5 points.png" class="five-points"/>
+                </div>
+            </div>
+            <div class="col "><p class="test-test test-left ql19">
+                I can create new methods of achieving some results for a greater cause</p>
+            </div>
+        </div>
+        <div class="test_images im-19"></div>
+
+        <!--20-->
+        <div class="row    row-cols-1  row-cols-lg-3 cont">
+            <div class="col "><p class="test-test test-right qr20">
+                My work could be helping people in need </p>
+            </div>
+            <div class="col ">
+                <div class="form-group-test">
+                    <p class="choice">Question № 20</p>
+                    <input type="range" class="range__input i20" id="Range20" th:field="*{q}" min="-2" max="2"
+                           oninput="slider1('i20', 'ql20', 'qr20')"
+                           step="1">
+                    <img src="/images/5 points.png" class="five-points"/>
+                </div>
+            </div>
+            <div class="col "><p class="test-test test-left ql20">
+                My work could be targeting a smaller circle, who can really appreciate it and afford it
+            </p>
+            </div>
+        </div>
+        <div class="test_images im-20"></div>
+
+        <!--21-->
+        <div class="row    row-cols-1  row-cols-lg-3 cont">
+            <div class="col "><p class="test-test test-right qr21">
+                This is a principle of mine to be able to understand the problem and know the truth even if it
+                doesn’t benefit me at all, and nobody knows that I was right </p>
+            </div>
+            <div class="col ">
+                <div class="form-group-test">
+                    <p class="choice">Question № 21</p>
+                    <input type="range" class="range__input i21" id="Range21" th:field="*{w}" min="-2" max="2"
+                           oninput="slider1('i21', 'ql21', 'qr21')"
+                           step="1">
+                    <img src="/images/5 points.png" class="five-points"/>
+                </div>
+            </div>
+            <div class="col "><p class="test-test test-left ql21">
+                I can agree with a popular opinion, if it benefits me and brings me glory</p>
+            </div>
+        </div>
+        <div class="test_images im-21"></div>
+
+        <!--22-->
+        <div class="row    row-cols-1  row-cols-lg-3 cont">
+            <div class="col "><p class="test-test test-right qr22">
+                If I had my own business, I would set strict rules and formalities to avert awkward situations
+            </p></div>
+            <div class="col ">
+                <div class="form-group-test">
+                    <p class="choice">Question № 22</p>
+                    <input type="range" class="range__input i22" id="Range22" th:field="*{u}" min="-2" max="2"
+                           oninput="slider1('i22', 'ql22', 'qr22')"
+                           step="1">
+                    <img src="/images/5 points.png" class="five-points"/>
+                </div>
+            </div>
+            <div class="col "><p class="test-test test-left ql22">
+                If I had my own business, I wouldn’t care too much about the formalities, because I don’t think
+                it’s good to put people in a box</p>
+            </div>
+        </div>
+        <div class="test_images im-22"></div>
+
+        <!--23-->
+        <div class="row  row-cols-1  row-cols-lg-3 cont">
+            <div class="col "><p class="test-test test-right qr23">
+                Art and creativity is just as important as science and technical progress </p>
+            </div>
+            <div class="col ">
+                <div class="form-group-test">
+                    <p class="choice">Question № 23</p>
+                    <input type="range" class="range__input i23" id="Range23" th:field="*{i}" min="-2" max="2"
+                           oninput="slider1('i23', 'ql23', 'qr23')"
+                           step="1">
+                    <img src="/images/5 points.png" class="five-points"/>
+                </div>
+            </div>
+            <div class="col "><p class="test-test test-left ql23">
+                Art and creativity means way less compared to science and technical progress
+            </p>
+            </div>
+        </div>
+        <div class="test_images im-23"></div>
+
+        <div class="row justify-content-center test-form">
+            <div class=" test-form">
+                <div class="d-md-flex">
+                    <input type="number" min="16" max="90" required class="form-ctrl" placeholder="Your age"
+                           th:field="*{age}" id="age">
+                </div>
+                <div class="d-md-flex">
+                    <input type="text" minlength="3" maxlength="50" required class="form-ctrl" placeholder="Your name"
+                           th:field="*{name}">
+                </div>
+                <div class="d-md-flex form-check-lbl">
+                    <input type="checkbox" class="form-check-inp" id="check">
+
+                    <button data-toggle="modal" data-target="#exampleModalScrollable" class="acceptance">
+                        Accept the terms
+                    </button>
+
+                    <!-- Modal -->
+                    <div th:insert="fragments/terms.html"></div>
 
 
-                    </div>
-                    <div class="submit">
-                        <button type="submit" class="btn btn-primary btn-test" onClick="check()">Next</button>
-                    </div>
                 </div>
+                <div class="submit">
+                    <button type="submit" class="btn btn-primary btn-test" onClick="check()">Next</button>
                 </div>
-            </form>
+            </div>
+        </div>
+    </form>
     </div>
 
 
 </section>
 
-<footer th:insert="fragments/footer.html :: footer"> </footer>
+<footer th:insert="fragments/footer.html :: footer"></footer>
 
 <div th:insert="fragments/subfooter.html"></div>
 

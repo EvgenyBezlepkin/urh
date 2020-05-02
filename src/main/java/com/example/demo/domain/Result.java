@@ -1,4 +1,4 @@
-package com.example.demo;
+package com.example.demo.domain;
 
 import javax.persistence.*;
 import javax.validation.constraints.*;

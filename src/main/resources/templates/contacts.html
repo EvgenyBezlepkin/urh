@@ -14,24 +14,8 @@
         background-attachment: fixed;
     }
 </style>
-<nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
-    <div class="container">
-        <a class="navbar-brand" href="/"> <img src="/images/UHR white 1.png" class="logo"></a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav"
-                aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
-            <img src="/images/Menu.png" class="logo">
-        </button>
-        <div class="collapse navbar-collapse" id="ftco-nav">
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item"><a href="/our_services" class="nav-link">Our services</a></li>
-                <li class="nav-item"><a href="/about" class="nav-link">About</a></li>
-                <li class="nav-item active"><a href="/contacts" class="nav-link">Contact us</a></li>
-            </ul>
-        </div>
-    </div>
-</nav>
-<!-- END nav -->
 
+<nav th:insert="fragments/navbar.html :: nav"></nav>
 
 <section class=" ftco-section">
     <!--<div class="overlay"></div>-->
@@ -52,8 +36,7 @@
 
                 <div class="my-map">
                     <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d31347.99000272982!2d-73.97443587161057!3d40.771355578330535!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sru!2sru!4v1584291184917!5m2!1sru!2sru"
-                            width="600" height="450" frameborder="0" style="border:0;" allowfullscreen=""
-                            aria-hidden="false" tabindex="0"></iframe>
+                            width="600" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
                 </div>
             </div>
         </div>
@@ -72,8 +55,7 @@
 
                         <div class="d-md-flex">
                             <div class="form-group">
-                                <input type="text" required class="form-control" placeholder="Email"
-                                       th:field="*{email}">
+                                <input type="text" required class="form-control" placeholder="Email" th:field="*{email}">
                             </div>
                         </div>
 
@@ -91,8 +73,7 @@
 
                         <div class="d-me-flex">
                             <div class="form-group">
-                                <input required type="text" class="form-control" placeholder="What do you like?"
-                                       th:field="*{whatDoYouLike}">
+                                <input required type="text" class="form-control" placeholder="What do you like?" th:field="*{whatDoYouLike}">
                             </div>
                         </div>
 

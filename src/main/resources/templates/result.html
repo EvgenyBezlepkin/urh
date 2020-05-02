@@ -36,11 +36,9 @@
             <div class="col-md-7 heading-section ftco-animate text-center">
 
                 <p class="p-result-header">Career Test Results</p>
-                <form   name="contact-form" method="post" th:action="@{/}"
-                      th:object="${result}">
+                <form name="contact-form" method="post" th:action="@{/}" th:object="${result}">
                     <p class="p-result" readonly th:utext="${result.outs}"></p>
                     <div class="row justify-content-center test-form">
-
                         <div class="d-md-flex">
                             <input type="email" required class="form-ctrl " placeholder="Email" id="email" th:field="*{email}">
                         </div>
@@ -56,7 +54,6 @@
                         <div class="col-sm-10">
                             <input type="hidden" class="form-control-plaintext" id="res" th:field="*{intermediateResult}">
                         </div>
-
                     </div>
 
                     <button type="submit" class="btn btn-primary btn-test send-result" >Send</button>
@@ -71,17 +68,7 @@
     <div class="container">
         <div class="row justify-content-center mb-3">
             <div class="col-md-7 heading-section ftco-animate text-center">
-                <p class="p-result-possibilities">
-                    Bonus! Look at our mask on Instagram (tap to find out your profession):
-                    <a href="https://www.instagram.com/a/r/?effect_id=1012474792460678" class="to-instagram">instagram.com</a>
-                    <br>
-                    Career guidance test is not our only product. Our company is a new type of HR agency. <br>
-                    In the near future, we will be able to find you the optimal work taking into account the test
-                    result, <br>
-                    work experience and education. Follow the news on our social networks or on urhumanresource.com<br>
-                    We will send you an email as soon as we launch additional features.<br>
-                    To improve the quality of the results, take our test every 3-5 months.
-                    </p>
+                <p class="p-result-possibilities" th:utext="#{p-result-possibilities}"></p>
             </div>
         </div>
     </div>

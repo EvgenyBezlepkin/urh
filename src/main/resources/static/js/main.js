@@ -301,8 +301,8 @@
 
  function slider1(slider, left, right) {
      var slider1 = $("." + slider).val();
-     var q1r = $("." + right);
-     var q1l = $("." + left)
+     var q1l = $("." + right);
+     var q1r = $("." + left)
      if (slider1 == -2){
          q1r.css('color', 'rgb(50,50,50)');
          q1l.css('color', 'rgb(240,240,240)');
@@ -327,8 +327,8 @@
 
  function slider2(slider, left, right) {
      var slider1 = $("." + slider).val();
-     var q1r = $("." + right);
-     var q1l = $("." + left)
+     var q1l = $("." + right);
+     var q1r = $("." + left)
      if (slider1 == -2){
          q1r.css('color', 'rgb(50,50,50)');
          q1l.css('color', 'rgb(240,240,240)');

@@ -1,12 +1,16 @@
 package com.example.demo;
 
+import com.example.demo.domain.*;
+import com.example.demo.repository.IntermediateResultRepository;
+import com.example.demo.repository.ResultRepository;
+import com.example.demo.repository.RewievRepository;
+import com.example.demo.repository.ServiceTemporalRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.mail.javamail.MimeMessageHelper;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -17,7 +21,6 @@ import javax.mail.internet.MimeMessage;
 import javax.validation.Valid;
 import java.time.LocalDateTime;
 import java.util.*;
-import java.util.stream.Collectors;
 import java.util.stream.DoubleStream;
 
 @Controller
@@ -40,7 +43,6 @@ public class Main {
         return "index";
     }
 
-
     @PostMapping("/")
     public String getIndex(@ModelAttribute Result result) {
         result.setLdt(LocalDateTime.now());
@@ -58,7 +60,7 @@ public class Main {
 
 
     @RequestMapping("/result")
-    public String resTest(Model model, @ModelAttribute @Valid Test item) {
+    public String resTest(Model model, @ModelAttribute Test item) {
         IntermediateResult interRes = countTest(item);
         String res = countResult(interRes);
         res = res.replaceAll("%. ", "%<br>");
@@ -67,19 +69,15 @@ public class Main {
         return "result";
     }
 
-
     @GetMapping("/about")
     public String getAboutPage() {
         return "about";
     }
 
-
     @GetMapping("/our_services")
     public String getServicesPage(Model model) {
         model.addAttribute("serviceTemporal", new ServiceTemporal());
-
         model.addAttribute("count", resultRepository.count());
-
         return "our_servicesTemporal";
     }
 
@@ -99,7 +97,6 @@ public class Main {
     @PostMapping("/contacts")
     public String saveRec(@ModelAttribute Rewiev rewiev) {
         rewievRepository.save(rewiev);
-
         return "contacts";
     }
 
