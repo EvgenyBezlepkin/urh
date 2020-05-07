@@ -84,6 +84,8 @@
     <form onSubmit="func(this)" id="test-form" class="contact" name="contact-form" method="post" th:action="@{/result}"
           th:object="${test}">
 
+        <p class="p-about-desc" th:utext="#{p-about-test-desc-before-first}"></p>
+
         <!--input 1-->
         <div class=" row row-cols-1  row-cols-lg-3 cont">
             <div class="col "><p class="test-test test-right qr1">Usually, I am deeply involved in an activity. I try to
@@ -127,6 +129,8 @@
             </div>
         </div>
         <div class="test_images im-2"></div>
+
+        <p class="p-about-desc" th:utext="#{p-about-test-desc-before-third}"></p>
 
         <!--input 3-->
         <div class="row  row-cols-1  row-cols-lg-3 cont">
