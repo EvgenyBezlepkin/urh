@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
-<head th:insert="fragments/head.html :: head"> </head>
+<head th:insert="fragments/head.html :: head"></head>
 <body>
 <!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TN9PV57"
-                  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<noscript>
+    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TN9PV57"
+            height="0" width="0" style="display:none;visibility:hidden"></iframe>
+</noscript>
 <!-- End Google Tag Manager (noscript) -->
 <style type="text/css">
     body {
@@ -36,58 +38,55 @@
 
                 <div class="my-map">
                     <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d31347.99000272982!2d-73.97443587161057!3d40.771355578330535!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sru!2sru!4v1584291184917!5m2!1sru!2sru"
-                            width="600" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+                            width="600" height="450" frameborder="0" style="border:0;" allowfullscreen=""
+                            aria-hidden="false" tabindex="0"></iframe>
                 </div>
             </div>
         </div>
     </div>
 
     <div class="container">
-                <div class=" contacts justify-content-center">
-                    <p>Contact Us</p>
-                    <form action="/contacts" method="POST" class="appointment-form" th:object="${rewiev}">
+        <p id="contact_us">Contact Us</p>
+        <form onsubmit="return false" class="appointment-form" th:object="${rewiev}">
 
-                        <div class="d-md-flex">
-                            <div class="form-group">
-                                <input type="text" required class="form-control" placeholder="Name" th:field="*{name}">
-                            </div>
-                        </div>
-
-                        <div class="d-md-flex">
-                            <div class="form-group">
-                                <input type="text" required class="form-control" placeholder="Email" th:field="*{email}">
-                            </div>
-                        </div>
-
-                        <div class="d-md-flex">
-                            <!--<div class="form-group">-->
-                            <!--<label for="selectRate"></label>-->
-                            <!--</div>-->
-                            <select class="form-control" required th:field="*{recommended}" id="selectRate">
-                                <option value="Default1">Rate our service</option>
-                                <option value="Default1">Excellent!</option>
-                                <option value="Default2">Good</option>
-                                <option value="Default3">Can do better</option>
-                            </select>
-                        </div>
-
-                        <div class="d-me-flex">
-                            <div class="form-group">
-                                <input required type="text" class="form-control" placeholder="What do you like?" th:field="*{whatDoYouLike}">
-                            </div>
-                        </div>
-
-                        <div class="submit">
-                            <input type="submit" value="Send" class="btn btn-primary btn-contacts">
-                        </div>
-
-                    </form>
+            <div class="d-md-flex">
+                <div class="form-group">
+                    <input type="text" required class="form-control" placeholder="Name" id="contacts_name">
                 </div>
             </div>
 
+            <div class="d-md-flex">
+                <div class="form-group">
+                    <input type="text" required class="form-control" placeholder="Email" id="contacts_email">
+                </div>
+            </div>
+
+            <div class="d-md-flex">
+                <select class="form-control" required id="contacts_rate">
+                    <option value="Rate our service">Rate our service</option>
+                    <option value="Excellent">Excellent!</option>
+                    <option value="Good">Good</option>
+                    <option value="Can do better">Can do better</option>
+                </select>
+            </div>
+
+            <div class="d-me-flex">
+                <div class="form-group">
+                    <input required type="text" class="form-control" placeholder="What do you like?" id="contacts_desc">
+                </div>
+            </div>
+
+                    <input required type="reset" class="form-control" placeholder="What do you like?" id="contacts_reset">
+
+            <div class="submit">
+                <input type="submit" value="Send" class="btn btn-primary btn-contacts" onclick="postData()">
+            </div>
+        </form>
+    </div>
+
 </section>
 
-<footer th:insert="fragments/footer.html :: footer"> </footer>
+<footer th:insert="fragments/footer.html :: footer"></footer>
 
 <div th:insert="fragments/subfooter.html"></div>
 

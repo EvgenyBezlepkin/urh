@@ -287,17 +287,13 @@
 	// });
   //
 	// $('#appointment_time').timepicker();
-
-
-
-
-
 })(jQuery);
 
- function func(that) {
-     var a = that.querySelector('input[type="checkbox"]:checked');
-     return !!a;
- };
+ function checkForm() {
+     console.log(document.getElementById("test_check").checked)
+     return document.getElementById("test_check").checked
+ }
+
 
  function slider1(slider, left, right) {
      var slider1 = $("." + slider).val();
@@ -354,3 +350,63 @@
          q1l.css('color', 'rgb(50,50,50)');
      }
  }
+
+
+ function postData() {
+
+     let contacts_name = document.getElementById("contacts_name").value
+     let contacts_email = document.getElementById("contacts_email").value
+     let contacts_rate = document.getElementById("contacts_rate").value
+     let contacts_desc = document.getElementById("contacts_desc").value
+
+     let data = {
+         name :contacts_name,
+         email :contacts_email,
+         recommended :contacts_rate,
+         whatDoYouLike :contacts_desc
+     }
+
+     fetch('/contacts', {
+         method: 'POST',
+         headers: {
+             'Content-Type': 'application/json',
+         },
+         body: JSON.stringify(data)
+     })
+         .then(response => {
+             if (response.ok) {
+                 document.getElementById("contacts_reset").click()
+                 document.getElementById("contact_us").innerText="Feedback has been received"
+             }
+         })
+
+
+ }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

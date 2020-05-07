@@ -12800,3 +12800,8 @@ option {
 .nonbold{
     font-weight: normal;
 }
+
+
+#contacts_reset {
+    display: none;
+}

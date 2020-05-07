@@ -1,4 +1,4 @@
-package com.example.demo;
+package com.example.demo.controller;
 
 import com.example.demo.domain.*;
 import com.example.demo.repository.IntermediateResultRepository;
@@ -11,10 +11,7 @@ import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.mail.javamail.MimeMessageHelper;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
 import javax.mail.MessagingException;
 import javax.mail.internet.MimeMessage;
@@ -94,11 +91,13 @@ public class Main {
         return "contacts";
     }
 
-    @PostMapping("/contacts")
-    public String saveRec(@ModelAttribute Rewiev rewiev) {
-        rewievRepository.save(rewiev);
-        return "contacts";
-    }
+//    @PostMapping("/contacts")
+//    public String saveRec(@ModelAttribute Rewiev rewiev) {
+////        rewievRepository.save(rewiev);
+//
+//        System.out.println(rewiev.getEmail());
+//        return "contacts";
+//    }
 
 
     private void sendEmail(Result result) {

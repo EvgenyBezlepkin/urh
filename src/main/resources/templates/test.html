@@ -81,7 +81,7 @@
     <div class="test_images im-0"></div>
 
     <div class="status alert alert-success" style="display: none"></div>
-    <form onSubmit="func(this)" id="test-form" class="contact" name="contact-form" method="post" th:action="@{/result}"
+    <form onsubmit="return checkForm()" id="test-form" class="contact" name="contact-form" method="post" th:action="@{/result}"
           th:object="${test}">
 
         <p class="p-about-desc" th:utext="#{p-about-test-desc-before-first}"></p>
@@ -595,7 +595,7 @@
                            th:field="*{name}">
                 </div>
                 <div class="d-md-flex form-check-lbl">
-                    <input type="checkbox" class="form-check-inp" id="check">
+                    <input type="checkbox" class="form-check-inp" id="test_check">
 
                     <button data-toggle="modal" data-target="#exampleModalScrollable" class="acceptance">
                         Accept the terms
@@ -607,7 +607,7 @@
 
                 </div>
                 <div class="submit">
-                    <button type="submit" class="btn btn-primary btn-test" onClick="check()">Next</button>
+                    <button type="submit" class="btn btn-primary btn-test" >Next</button>
                 </div>
             </div>
         </div>
