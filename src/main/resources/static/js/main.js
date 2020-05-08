@@ -352,7 +352,7 @@
  }
 
 
- function postData() {
+ function postDataContacts() {
 
      let contacts_name = document.getElementById("contacts_name").value
      let contacts_email = document.getElementById("contacts_email").value
@@ -379,14 +379,72 @@
                  document.getElementById("contact_us").innerText="Feedback has been received"
              }
          })
-
-
  }
 
 
+ var email
+ var name
 
 
+function  postDataResults(){
 
+    email = document.getElementById("results_email").value
+    name = document.getElementById("results_name").value
+    let results_outs = document.getElementById("results_outs").value
+    let results_age = document.getElementById("results_age").value
+
+    let data = {
+        email :email,
+        name :name,
+        outs :results_outs,
+        age :results_age,
+    }
+
+    document.getElementById("spinner_box_id").style.display="block"
+
+    fetch('/', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data)
+    })
+        .then(response => {
+            if (response.ok) {
+                document.getElementById("spinner_box_id").style.display="none"
+                $('#contacts_modal').modal('show')
+            }
+        }).then(
+
+    )
+}
+
+ function  postDataFeedback(){
+
+     let contacts_rate = document.getElementById("feedback_rate").value
+     let contacts_desc = document.getElementById("feedback_desc").value
+
+     let data = {
+         name :name,
+         email :email,
+         recommended :contacts_rate,
+         whatDoYouLike :contacts_desc
+     }
+
+     fetch('/contacts', {
+         method: 'POST',
+         headers: {
+             'Content-Type': 'application/json',
+         },
+         body: JSON.stringify(data)
+     })
+         .then(response => {
+             if (response.ok) {
+                    console.log("yes")
+                 location.replace("/")
+             }
+         })
+ }
 
 
 
