@@ -400,23 +400,24 @@ function  postDataResults(){
         age :results_age,
     }
 
-    document.getElementById("spinner_box_id").style.display="block"
+    if (email.length != 0) {
+        document.getElementById("spinner_box_id").style.display = "block"
 
-    fetch('/', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(data)
-    })
-        .then(response => {
-            if (response.ok) {
-                document.getElementById("spinner_box_id").style.display="none"
-                $('#contacts_modal').modal('show')
-            }
-        }).then(
-
-    )
+        fetch('/', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(data)
+        })
+            .then(response => {
+                if (response.ok) {
+                    document.getElementById("spinner_box_id").style.display = "none"
+                    $('#contacts_modal').modal('show')
+                }
+            }).then(
+        )
+    }
 }
 
  function  postDataFeedback(){
@@ -440,15 +441,15 @@ function  postDataResults(){
      })
          .then(response => {
              if (response.ok) {
-                    console.log("yes")
                  location.replace("/")
              }
          })
  }
 
 
-
-
+ $('#contacts_modal').on('hidden.bs.modal', function (e) {
+     location.replace("/")
+ })
 
 
 

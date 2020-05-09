@@ -1,15 +1,17 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
-<head th:insert="fragments/head.html :: head"> </head>
+<head th:insert="fragments/head.html :: head"></head>
 <body>
 <!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TN9PV57"
-                  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<noscript>
+    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TN9PV57"
+            height="0" width="0" style="display:none;visibility:hidden"></iframe>
+</noscript>
 <!-- End Google Tag Manager (noscript) -->
 <style type="text/css">
     body {
-        background: linear-gradient( rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6) ),url(images/18.jpg);
-        background-color:rgba(0,0,0,0.3);
+        background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(images/18.jpg);
+        background-color: rgba(0, 0, 0, 0.3);
         background-repeat: no-repeat;
         background-attachment: fixed;
         background-size: cover;
@@ -41,11 +43,12 @@
                 </div>
                 <p class="p-result-header">Career Test Results</p>
 
-                <form name="contact-form" onsubmit="return false"  th:object="${result}">
+                <form name="contact-form" onsubmit="return false" th:object="${result}">
                     <p class="p-result" readonly th:utext="${result.outs}"></p>
                     <div class="row justify-content-center test-form">
                         <div class="d-md-flex">
-                            <input type="email" required class="form-ctrl " placeholder="Email" id="results_email" th:field="*{email}">
+                            <input type="email" required class="form-ctrl " placeholder="Email" id="results_email"
+                                   th:field="*{email}">
                         </div>
                         <div class="col-sm-10">
                             <input type="hidden" class="form-control" id="results_name" th:field="*{name}">
@@ -57,52 +60,20 @@
                             <input type="hidden" class="form-control-plaintext" id="results_age" th:field="*{age}">
                         </div>
                         <div class="col-sm-10">
-                            <input type="hidden" class="form-control-plaintext" id="results_intermediateResult" th:field="*{intermediateResult}">
+                            <input type="hidden" class="form-control-plaintext" id="results_intermediateResult"
+                                   th:field="*{intermediateResult}">
                         </div>
                     </div>
 
-                    <button type="submit" class="btn btn-primary btn-test send-result" onclick="postDataResults()">Send</button>
+                    <button type="submit" class="btn btn-primary btn-test send-result" onclick="postDataResults()">
+                        Send
+                    </button>
                 </form>
-
             </div>
         </div>
-
-
-
-        <div class="row justify-content-center test-form">
-            <div class="modal" tabindex="-1" role="dialog" id="contacts_modal">
-                <div class="modal-dialog" role="document">
-                    <div class="modal-content">
-                        <div class="modal-body">
-                            <form onsubmit="return false" class="appointment-form" >
-                                <div class="d-md-flex">
-                                    <select class="form-control" required id="feedback_rate">
-                                        <option value="Rate our service">Rate our service</option>
-                                        <option value="Excellent">Excellent!</option>
-                                        <option value="Good">Good</option>
-                                        <option value="Can do better">Can do better</option>
-                                    </select>
-                                </div>
-                                <div class="d-me-flex">
-                                    <div class="form-group">
-                                        <input required type="text" class="form-control" placeholder="What do you like?" id="feedback_desc">
-                                    </div>
-                                </div>
-                                <div class="submit">
-                                    <input type="submit" value="Send" class="btn btn-primary btn-contacts" onclick="postDataFeedback()">
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-
-
+        <div th:insert="fragments/modal_result.html"></div>
     </div>
 </section>
-
 
 
 <section class="ftco-section">
@@ -115,7 +86,7 @@
     </div>
 </section>
 
-<footer th:insert="fragments/footer.html :: footer"> </footer>
+<footer th:insert="fragments/footer.html :: footer"></footer>
 
 <div th:insert="fragments/subfooter.html"></div>
 

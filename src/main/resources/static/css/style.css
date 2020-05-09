@@ -12876,15 +12876,15 @@ option {
 /* GRID STYLING */
 
 .spinner-box {
-    width: 100px;
-    height: 100px;
+    width: 80px;
+    height: 80px;
     display: none;
     justify-content: center;
     align-items: center;
     background-color: transparent;
     position:absolute;
-    bottom: 40%;
-    left: 50%;
+    bottom: 15%;
+    left: 44%;
 }
 
 .circle-border {
@@ -12907,3 +12907,6 @@ option {
     border-radius: 50%;
 }
 
+.result-modal {
+    margin-top: 25%;
+}
