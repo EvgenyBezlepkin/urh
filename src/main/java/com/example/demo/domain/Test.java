@@ -1,38 +1,35 @@
 package com.example.demo.domain;
 
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
 
-import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
 
 @Controller
 public class Test {
 
-    private int a;
-    private int b;
-    private int d;
-    private int e;
-    private int f;
-    private int g;
-    private int h;
-    private int k;
-    private int l;
-    private int m;
-    private int n;
-    private int o;
-    private int p;
-    private int r;
-    private int s;
-    private int t;
-    private int x;
-    private int y;
-    private int z;
-    private int q;
-    private int w;
-    private int u;
-    private int i;
+    private int val1; //val1
+    private int b; //val2
+    private int d; //val3
+    private int e; //val4
+    private int f; //val5
+    private int g; //val6
+    private int h; //val7
+    private int k; //val8
+    private int l; //val9
+    private int m; //val10
+    private int n; //val11
+    private int o; //val12
+    private int p; //val13
+    private int r; //val14
+    private int s; //val15
+    private int t; //val16
+    private int x; //val17
+    private int y; //val18
+    private int z; //val19
+    private int q; //val20
+    private int w; //val21
+    private int u; //val22
+    private int i; //val23
     @NotNull
     private Integer age;
     @NotNull
@@ -41,12 +38,12 @@ public class Test {
     public Test() {
     }
 
-    public int getA() {
-        return a;
+    public int getVal1() {
+        return val1;
     }
 
-    public void setA(int a) {
-        this.a = a;
+    public void setVal1(int val1) {
+        this.val1 = val1;
     }
 
     public int getB() {

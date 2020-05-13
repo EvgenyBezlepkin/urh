@@ -8,15 +8,10 @@ import com.example.demo.repository.ServiceTemporalRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.mail.javamail.JavaMailSender;
-import org.springframework.mail.javamail.MimeMessageHelper;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
-import javax.mail.MessagingException;
-import javax.mail.internet.MimeMessage;
-import javax.validation.Valid;
-import java.time.LocalDateTime;
 import java.util.*;
 import java.util.stream.DoubleStream;
 
@@ -91,6 +86,12 @@ public class Main {
         return "contacts";
     }
 
+    @GetMapping("/our_services_2")
+    public String getServ(Model model) {
+        return "our_services";
+    }
+
+
 //    @PostMapping("/contacts")
 //    public String saveRec(@ModelAttribute Rewiev rewiev) {
 ////        rewievRepository.save(rewiev);
@@ -131,16 +132,16 @@ public class Main {
 //1 ВОПРОС: Тех и Общ
 
 
-        if (item.getA() == -2 | item.getA() == -1) {
-            TE = TE + Math.abs(item.getA()) + 1;
+        if (item.getVal1() == -2 | item.getVal1() == -1) {
+            TE = TE + Math.abs(item.getVal1()) + 1;
             //console.log("Техник1 " + TE)
         }
 
-        if (item.getA() == 1 | item.getA() == 2) {
-            OF = OF + Math.abs(item.getA()) + 1;
+        if (item.getVal1() == 1 | item.getVal1() == 2) {
+            OF = OF + Math.abs(item.getVal1()) + 1;
             //console.log("Общественник1 "+OF)
         }
-        if (item.getA() == 0) {
+        if (item.getVal1() == 0) {
             //console.log("Nothing")
         }
 

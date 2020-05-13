@@ -41,7 +41,7 @@
                         <div class="circle-core"></div>
                     </div>
                 </div>
-                <p class="p-result-header">Career Test Results</p>
+                <p class="p-result-header" th:text="#{p-result-header2}"></p>
 
                 <form name="contact-form" onsubmit="return false" th:object="${result}">
                     <p class="p-result" readonly th:utext="${result.outs}"></p>

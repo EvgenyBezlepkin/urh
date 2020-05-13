@@ -24,10 +24,7 @@
     <div class="container">
 
         <div class="row justify-content-start text-contact">
-            <p class="text-contacts">
-                <!--2009 58th street, Brooklyn, NY.<br>-->
-                Contact us in social media, or text us at<br>
-                info@urhumanresource.com
+            <p class="text-contacts" th:utext="#{text_contacts}">
             </p>
         </div>
     </div>
@@ -46,7 +43,7 @@
     </div>
 
     <div class="container">
-        <p id="contact_us">Contact Us</p>
+        <p id="contact_us" th:utext="#{contact_us}"></p>
         <form onsubmit="return false" class="appointment-form" th:object="${rewiev}">
 
             <div class="d-md-flex">
