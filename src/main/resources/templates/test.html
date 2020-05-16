@@ -93,7 +93,7 @@
                 <div class="form-group-test">
                     <p class="choice">Question № 1</p>
                     <div class="range">
-                        <input class="range__input i1" type="range" th:field="*{a}" value="0" min="-2" max="2" step="1"
+                        <input class="range__input i1" type="range" th:field="*{val1}" value="0" min="-2" max="2" step="1"
                                oninput="slider1('i1', 'ql1', 'qr1')"/>
                         <img src="/images/5 points.png" class="five-points"/>
                     </div>
@@ -106,9 +106,7 @@
         <!--input 2-->
         <div class="row  row-cols-1  row-cols-lg-3 cont">
             <div class="col ">
-                <p class="test-test test-right qr2">It is more important for me that the result of my work gave benefit
-                    for the humanity, even if
-                    I would have to do this to the detriment of myself </p>
+                <p class="test-test test-right qr2" th:text="#{qr2}"> </p>
             </div>
             <div class="col ">
                 <div class="form-group-test">
@@ -121,9 +119,7 @@
                 </div>
             </div>
             <div class="col ">
-                <p class="test-test test-left ql2"> It is more important for me to get to the truth, even if it would be
-                    unlikely for somebody
-                    and be opposite to the existential viewpoint</p>
+                <p class="test-test test-left ql2" th:text="#{ql2}"> </p>
             </div>
         </div>
         <div class="test_images im-2"></div>
@@ -133,9 +129,7 @@
         <!--input 3-->
         <div class="row  row-cols-1  row-cols-lg-3 cont">
             <div class="col ">
-                <p class="test-test test-right qr3">Creating something new is essential part of work, which I would like
-                    to do
-                </p>
+                <p class="test-test test-right qr3" th:text="#{qr3}">  </p>
             </div>
             <div class="col ">
                 <div class="form-group-test">
@@ -150,8 +144,7 @@
 
             </div>
             <div class="col ">
-                <p class="test-test test-left ql3"> Managing people is essential part of work, which I would like to do
-                </p>
+                <p class="test-test test-left ql3" th:text="#{ql3}"> </p>
             </div>
         </div>
         <div class="test_images im-3"></div>
@@ -159,9 +152,7 @@
         <!--input 4-->
         <div class="row  row-cols-1  row-cols-lg-3 cont">
             <div class="col ">
-                <p class="test-test test-right qr4">If my idea is not appreciated by people, I will get upset, because I
-                    created it for their own
-                    good </p>
+                <p class="test-test test-right qr4" th:text="#{qr4}"> </p>
             </div>
             <div class="col ">
                 <div class="form-group-test">
@@ -173,18 +164,14 @@
                 </div>
 
             </div>
-            <div class="col "><p class="test-test test-left ql4">
-                If my idea is not appreciated by people, I will get upset, because they don’t understand the
-                beauty of my concepts</p>
+            <div class="col "><p class="test-test test-left ql4" th:text="#{ql4}"></p>
             </div>
         </div>
         <div class="test_images im-4"></div>
 
         <!--input 5-->
         <div class="row  row-cols-1  row-cols-lg-3 cont">
-            <div class="col "><p class="test-test test-right qr5">
-                To acquire a skill it’s enough to perform it accurately, without theoretical learning of the
-                process. </p>
+            <div class="col "><p class="test-test test-right qr5" th:text="#{qr5}"> </p>
             </div>
             <div class="col ">
                 <div class="form-group-test">
@@ -196,17 +183,14 @@
 
             </div>
             <div class="col ">
-                <p class="test-test test-left ql5">
-                    To acquire a skill I must to learn the theory clearly, and only after that start performing it.
-                </p></div>
+                <p class="test-test test-left ql5" th:text="#{ql5}"></p>
+            </div>
         </div>
         <div class="test_images im-5"></div>
 
         <!--input 6-->
         <div class="row  row-cols-1  row-cols-lg-3 cont">
-            <div class="col "><p class="test-test test-right qr6">
-                I try not to be like all people, but have my own point of view all-around, even if it’s
-                problematic for me </p>
+            <div class="col "><p class="test-test test-right qr6" th:text="#{qr6}"> </p>
             </div>
             <div class="col ">
                 <div class="form-group-test">
@@ -217,16 +201,14 @@
                 </div>
             </div>
             <div class="col ">
-                <p class="test-test test-left ql6">
-                    I try not to disagree with most, not to be an upstart, but just to do my work</p>
+                <p class="test-test test-left ql6" th:text="#{ql6}"></p>
             </div>
         </div>
         <div class="test_images im-6"></div>
 
         <!--7-->
         <div class="row  row-cols-1  row-cols-lg-3 cont">
-            <div class="col "><p class="test-test test-right qr7">
-                It’s more important for me that my occupation provides stability </p>
+            <div class="col "><p class="test-test test-right qr7" th:text="#{qr7}"> </p>
             </div>
             <div class="col ">
                 <div class="form-group-test">
@@ -237,18 +219,14 @@
                     <img src="/images/6 points.png" class="six-points"/>
                 </div>
             </div>
-            <div class="col "><p class="test-test test-left ql7">
-                It’s more important for me that my occupation provided an ability to help other people
-            </p>
+            <div class="col "><p class="test-test test-left ql7" th:text="#{ql7}"> </p>
             </div>
         </div>
         <div class="test_images im-7"></div>
 
         <!--8-->
         <div class="row  row-cols-1  row-cols-lg-3 cont">
-            <div class="col "><p class="test-test test-right qr8">
-                I want to and I can give specific instructions to people on what they must do; I can be
-                responsible for them </p>
+            <div class="col "><p class="test-test test-right qr8" th:text="#{qr8}"> </p>
             </div>
             <div class="col ">
                 <div class="form-group-test">
@@ -259,18 +237,14 @@
                     <img src="/images/5 points.png" class="five-points"/>
                 </div>
             </div>
-            <div class="col "><p class="test-test test-left ql8">
-                I would like to get specific instructions for each action; have an ability to reach out to more
-                experienced employer for the advice</p>
+            <div class="col "><p class="test-test test-left ql8" th:text="#{ql8}"></p>
             </div>
         </div>
         <div class="test_images im-8"></div>
 
         <!--9-->
         <div class="row  row-cols-1  row-cols-lg-3 cont">
-            <div class="col "><p class="test-test test-right qr9">
-                I would like to be a person who is passionate about their own work and just enjoys a well-done
-                task, regardless of my position </p>
+            <div class="col "><p class="test-test test-right qr9" th:text="#{qr9}"> </p>
             </div>
             <div class="col ">
                 <div class="form-group-test">
@@ -281,16 +255,14 @@
                     <img src="/images/5 points.png" class="five-points"/>
                 </div>
             </div>
-            <div class="col "><p class="test-test test-left ql9">
-                I would like to be a person who has accomplished a lot, achieved success</p>
+            <div class="col "><p class="test-test test-left ql9" th:text="#{ql9}"></p>
             </div>
         </div>
         <div class="test_images im-9"></div>
 
         <!--10-->
         <div class="row  row-cols-1  row-cols-lg-3 cont">
-            <div class="col "><p class="test-test test-right qr10">
-                I see the world depending on my mood; I see many things in different ways </p>
+            <div class="col "><p class="test-test test-right qr10" th:text="#{qr10}"> </p>
             </div>
             <div class="col ">
                 <div class="form-group-test">
@@ -301,16 +273,14 @@
                     <img src="/images/5 points.png" class="five-points"/>
                 </div>
             </div>
-            <div class="col "><p class="test-test test-left ql10">
-                I try to see the world objectively, not allowing my mood or emotion to influence my perception
-            </p></div>
+            <div class="col "><p class="test-test test-left ql10" th:text="#{ql10}"></p>
+            </div>
         </div>
         <div class="test_images im-10"></div>
 
         <!--11-->
         <div class="row  row-cols-1  row-cols-lg-3 cont">
-            <div class="col "><p class="test-test test-right qr11">
-                I set big goals, even if I can’t always achieve them </p>
+            <div class="col "><p class="test-test test-right qr11" th:text="#{qr11}"> </p>
             </div>
             <div class="col ">
                 <div class="form-group-test">
@@ -321,17 +291,14 @@
                     <img src="/images/5 points.png" class="five-points"/>
                 </div>
             </div>
-            <div class="col "><p class="test-test test-left ql11">
-                I set humble goals, but I know exactly, that I can achieve them</p>
+            <div class="col "><p class="test-test test-left ql11" th:text="#{ql11}"></p>
             </div>
         </div>
         <div class="test_images im-11"></div>
 
         <!--12-->
         <div class="row  row-cols-1  row-cols-lg-3 cont">
-            <div class="col "><p class="test-test test-right qr12">
-                Sometimes, I am ready to work on tasks, that I don’t really like, as long as my overall goal
-                depends on it in the long run </p>
+            <div class="col "><p class="test-test test-right qr12" th:text="#{qr12}"> </p>
             </div>
             <div class="col ">
                 <div class="form-group-test">
@@ -342,18 +309,15 @@
                     <img src="/images/5 points.png" class="five-points"/>
                 </div>
             </div>
-            <div class="col "><p class="test-test test-left ql12">
-                I am completely against the tasks, that I don’t enjoy, even if it could help my goals in the
-                long run</p>
+            <div class="col "><p class="test-test test-left ql12" th:text="#{ql12}"></p>
             </div>
         </div>
         <div class="test_images im-12"></div>
 
         <!--13-->
         <div class="row  row-cols-1  row-cols-lg-3 cont">
-            <div class="col "><p class="test-test test-right qr13">
-                I am ready to invest time and effort even without salary, if it would satisfy my world vision
-            </p></div>
+            <div class="col "><p class="test-test test-right qr13" th:text="#{qr13}"></p>
+            </div>
             <div class="col ">
                 <div class="form-group-test">
                     <p class="choice">Question № 13</p>
@@ -363,18 +327,14 @@
                     <img src="/images/6 points.png" class="six-points"/>
                 </div>
             </div>
-            <div class="col "><p class="test-test test-left ql13">
-                I am ready to invest my own money in the developing of business, even if I would be at a risk of
-                losing it</p>
+            <div class="col "><p class="test-test test-left ql13" th:text="#{ql13}"></p>
             </div>
         </div>
         <div class="test_images im-13"></div>
 
         <!--14-->
         <div class="row    row-cols-1  row-cols-lg-3 cont">
-            <div class="col "><p class="test-test test-right qr14">
-                I can convince people to do something, persuade them to make a decision that benefits me
-            </p>
+            <div class="col "><p class="test-test test-right qr14" th:text="#{qr14}"></p>
             </div>
             <div class="col ">
                 <div class="form-group-test">
@@ -385,17 +345,14 @@
                     <img src="/images/5 points.png" class="five-points"/>
                 </div>
             </div>
-            <div class="col "><p class="test-test test-left ql14">
-                Truth is the key to authority. Being able to convince someone means way less.
-            </p>
+            <div class="col "><p class="test-test test-left ql14" th:text="#{ql14}"></p>
             </div>
         </div>
         <div class="test_images im-14"></div>
 
         <!--15-->
         <div class="row    row-cols-1  row-cols-lg-3 cont">
-            <div class="col "><p class="test-test test-right qr15">
-                I would like to do work that helps make this world a better place </p>
+            <div class="col "><p class="test-test test-right qr15" th:text="#{qr15}"> </p>
             </div>
             <div class="col ">
                 <div class="form-group-test">
@@ -406,17 +363,14 @@
                     <img src="/images/6 points.png" class="six-points"/>
                 </div>
             </div>
-            <div class="col "><p class="test-test test-left ql15">
-                I would like to work for my own goals and well-being</p>
+            <div class="col "><p class="test-test test-left ql15" th:text="#{ql15}"></p>
             </div>
         </div>
         <div class="test_images im-15"></div>
 
         <!--16-->
         <div class="row    row-cols-1  row-cols-lg-3 cont">
-            <div class="col "><p class="test-test test-right qr16">
-                I would prefer to spend my work time in laboratory / workshop / isolated office, without being
-                distracted and talking with colleagues </p>
+            <div class="col "><p class="test-test test-right qr16" th:text="#{qr16}"> </p>
             </div>
             <div class="col ">
                 <div class="form-group-test">
@@ -427,18 +381,14 @@
                     <img src="/images/5 points.png" class="five-points"/>
                 </div>
             </div>
-            <div class="col "><p class="test-test test-left ql16">
-                I would prefer to spend my work time in a friendly environment, to be able to take a break
-                sometimes</p>
+            <div class="col "><p class="test-test test-left ql16" th:text="#{ql16}"></p>
             </div>
         </div>
         <div class="test_images im-16"></div>
 
         <!--17-->
         <div class="row    row-cols-1  row-cols-lg-3 cont">
-            <div class="col "><p class="test-test test-right qr17">
-                If I suddenly got a big amount of money, I would invest into a good cause, like buying equipment
-                for the poor hospital or building a playground, etc.</p>
+            <div class="col "><p class="test-test test-right qr17" th:text="#{qr17}">.</p>
             </div>
             <div class="col ">
                 <div class="form-group-test">
@@ -449,18 +399,14 @@
                     <img src="/images/6 points.png" class="six-points"/>
                 </div>
             </div>
-            <div class="col "><p class="test-test test-left ql17">
-                If I suddenly got a big amount of money, I would invest it in my own business
-            </p>
+            <div class="col "><p class="test-test test-left ql17" th:text="#{ql17}"> </p>
             </div>
         </div>
         <div class="test_images im-17"></div>
 
         <!--18-->
         <div class="row    row-cols-1  row-cols-lg-3 cont">
-            <div class="col "><p class="test-test test-right qr18">
-                I might not understand the intricate details of my work, but I could easily manage the work of
-                others and strategize for the organization </p>
+            <div class="col "><p class="test-test test-right qr18" th:text="#{qr18}"> </p>
             </div>
             <div class="col ">
                 <div class="form-group-test">
@@ -471,17 +417,14 @@
                     <img src="/images/5 points.png" class="five-points"/>
                 </div>
             </div>
-            <div class="col "><p class="test-test test-left ql18">
-                I would prefer to have mastered my occupation, even if I don’t have a high position, I would
-                like to know the nuances of my profession</p>
+            <div class="col "><p class="test-test test-left ql18" th:text="#{ql18}"></p>
             </div>
         </div>
         <div class="test_images im-18"></div>
 
         <!--19-->
         <div class="row    row-cols-1  row-cols-lg-3 cont">
-            <div class="col "><p class="test-test test-right qr19">
-                I act more effectively if I have certain instructions, that bring the guaranteed results </p>
+            <div class="col "><p class="test-test test-right qr19" th:text="#{qr19}"> </p>
             </div>
             <div class="col ">
                 <div class="form-group-test">
@@ -492,16 +435,14 @@
                     <img src="/images/5 points.png" class="five-points"/>
                 </div>
             </div>
-            <div class="col "><p class="test-test test-left ql19">
-                I can create new methods of achieving some results for a greater cause</p>
+            <div class="col "><p class="test-test test-left ql19" th:text="#{ql19}"></p>
             </div>
         </div>
         <div class="test_images im-19"></div>
 
         <!--20-->
         <div class="row    row-cols-1  row-cols-lg-3 cont">
-            <div class="col "><p class="test-test test-right qr20">
-                My work could be helping people in need </p>
+            <div class="col "><p class="test-test test-right qr20" th:text="#{qr20}"> </p>
             </div>
             <div class="col ">
                 <div class="form-group-test">
@@ -512,18 +453,14 @@
                     <img src="/images/5 points.png" class="five-points"/>
                 </div>
             </div>
-            <div class="col "><p class="test-test test-left ql20">
-                My work could be targeting a smaller circle, who can really appreciate it and afford it
-            </p>
+            <div class="col "><p class="test-test test-left ql20" th:text="#{ql20}"> </p>
             </div>
         </div>
         <div class="test_images im-20"></div>
 
         <!--21-->
         <div class="row    row-cols-1  row-cols-lg-3 cont">
-            <div class="col "><p class="test-test test-right qr21">
-                This is a principle of mine to be able to understand the problem and know the truth even if it
-                doesn’t benefit me at all, and nobody knows that I was right </p>
+            <div class="col "><p class="test-test test-right qr21" th:text="#{qr21}"> </p>
             </div>
             <div class="col ">
                 <div class="form-group-test">
@@ -534,17 +471,14 @@
                     <img src="/images/5 points.png" class="five-points"/>
                 </div>
             </div>
-            <div class="col "><p class="test-test test-left ql21">
-                I can agree with a popular opinion, if it benefits me and brings me glory</p>
+            <div class="col "><p class="test-test test-left ql21" th:text="#{ql21}"></p>
             </div>
         </div>
         <div class="test_images im-21"></div>
 
         <!--22-->
         <div class="row    row-cols-1  row-cols-lg-3 cont">
-            <div class="col "><p class="test-test test-right qr22">
-                If I had my own business, I would set strict rules and formalities to avert awkward situations
-            </p></div>
+            <div class="col "><p class="test-test test-right qr22" th:text="#{qr22}"> </p></div>
             <div class="col ">
                 <div class="form-group-test">
                     <p class="choice">Question № 22</p>
@@ -554,17 +488,14 @@
                     <img src="/images/5 points.png" class="five-points"/>
                 </div>
             </div>
-            <div class="col "><p class="test-test test-left ql22">
-                If I had my own business, I wouldn’t care too much about the formalities, because I don’t think
-                it’s good to put people in a box</p>
+            <div class="col "><p class="test-test test-left ql22" th:text="#{ql22}"></p>
             </div>
         </div>
         <div class="test_images im-22"></div>
 
         <!--23-->
         <div class="row  row-cols-1  row-cols-lg-3 cont">
-            <div class="col "><p class="test-test test-right qr23">
-                Art and creativity is just as important as science and technical progress </p>
+            <div class="col "><p class="test-test test-right qr23" th:text="#{qr23}"> </p>
             </div>
             <div class="col ">
                 <div class="form-group-test">
@@ -575,9 +506,7 @@
                     <img src="/images/5 points.png" class="five-points"/>
                 </div>
             </div>
-            <div class="col "><p class="test-test test-left ql23">
-                Art and creativity means way less compared to science and technical progress
-            </p>
+            <div class="col "><p class="test-test test-left ql23" th:text="#{ql23}"> </p>
             </div>
         </div>
         <div class="test_images im-23"></div>

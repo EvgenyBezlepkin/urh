@@ -5,23 +5,26 @@ import com.example.demo.domain.Rewiev;
 import com.example.demo.repository.ResultRepository;
 import com.example.demo.repository.RewievRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.PropertySource;
 import org.springframework.http.MediaType;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.mail.javamail.MimeMessageHelper;
 import org.springframework.web.bind.annotation.*;
 
+import javax.mail.Header;
 import javax.mail.MessagingException;
 import javax.mail.internet.MimeMessage;
 import java.time.LocalDateTime;
 
 @RestController
+@PropertySource("classpath:mail-message.properties")
 public class MainRestController {
 
-    public JavaMailSender emailSender;
-    private ResultRepository resultRepository;
-    private RewievRepository rewievRepository;
+    private final JavaMailSender emailSender;
+    private final ResultRepository resultRepository;
+    private final RewievRepository rewievRepository;
 
-    @Autowired
+
     public MainRestController(JavaMailSender emailSender, ResultRepository resultRepository, RewievRepository rewievRepository) {
         this.emailSender = emailSender;
         this.resultRepository = resultRepository;
@@ -38,9 +41,10 @@ public class MainRestController {
     }
 
     @PostMapping("/")
-    public String getIndex(@RequestBody Result result) {
+    public String getIndex(@RequestBody Result result, @RequestHeader("Accept-Language") String langHeader) {
 
-        System.out.println(result.getName());
+        String lang = langHeader.substring(0, 2);
+        System.out.println(lang);
 
         result.setLdt(LocalDateTime.now());
         resultRepository.save(result);

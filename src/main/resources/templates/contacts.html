@@ -48,33 +48,32 @@
 
             <div class="d-md-flex">
                 <div class="form-group">
-                    <input type="text" required class="form-control" placeholder="Name" id="contacts_name">
+                    <input type="text" required class="form-control" th:attr="placeholder=#{contacts.name}"  id="contacts_name">
                 </div>
             </div>
 
             <div class="d-md-flex">
                 <div class="form-group">
-                    <input type="text" required class="form-control" placeholder="Email" id="contacts_email">
+                    <input type="text" required class="form-control" th:attr="placeholder=#{contacts.email}" id="contacts_email">
                 </div>
             </div>
 
             <div class="d-md-flex">
                 <select class="form-control" required id="contacts_rate">
-                    <option value="Rate our service">Rate our service</option>
-                    <option value="Excellent">Excellent!</option>
-                    <option value="Good">Good</option>
-                    <option value="Can do better">Can do better</option>
+                    <option  th:text="#{contact-us.rate}" value="1">Rate our service</option>
+                    <option  th:text="#{contact-us.excellent}" value="2">Excellent!</option>
+                    <option  th:text="#{contact-us.good}" value="3">Good</option>
+                    <option  th:text="#{contact-us.cando}" value="4">Can do better</option>
                 </select>
             </div>
 
             <div class="d-me-flex">
                 <div class="form-group">
-                    <input required type="text" class="form-control" placeholder="What do you like?" id="contacts_desc">
+                    <input required type="text" class="form-control" th:attr="placeholder=#{contacts.whatlike}"  id="contacts_desc">
                 </div>
             </div>
-
-                    <input required type="reset" class="form-control" placeholder="What do you like?" id="contacts_reset">
-
+<!--            служебный-->
+                    <input type="reset" id="contacts_reset">
             <div class="submit">
                 <input type="submit" value="Send" class="btn btn-primary btn-contacts" onclick="postDataContacts()">
             </div>

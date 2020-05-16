@@ -18,17 +18,19 @@ import java.util.stream.DoubleStream;
 @Controller
 public class Main {
 
-    @Autowired
-    private ResultRepository resultRepository;
-    @Qualifier("getJavaMailSender")
-    @Autowired
+    private final ResultRepository resultRepository;
     public JavaMailSender emailSender;
-    @Autowired
-    private IntermediateResultRepository intermediateResult;
-    @Autowired
-    private RewievRepository rewievRepository;
-    @Autowired
-    private ServiceTemporalRepository serviceTemporalRepository;
+    private final IntermediateResultRepository intermediateResult;
+    private final ServiceTemporalRepository serviceTemporalRepository;
+
+
+    public Main(ResultRepository resultRepository, @Qualifier("getJavaMailSender") JavaMailSender emailSender, IntermediateResultRepository intermediateResult, ServiceTemporalRepository serviceTemporalRepository) {
+        this.resultRepository = resultRepository;
+        this.emailSender = emailSender;
+        this.intermediateResult = intermediateResult;
+        this.serviceTemporalRepository = serviceTemporalRepository;
+    }
+
 
     @GetMapping("/")
     public String showIndex() {
@@ -630,12 +632,9 @@ public class Main {
         second.put(2, interRes.getLPV());
         second.put(3, interRes.getOFV());
         second.put(4, interRes.getTAV());
-
         second = sortByValue(second);
-
-        System.out.println("Внутри своей сферы");
+        //System.out.println("Внутри своей сферы");
         second.forEach((k, v) -> System.out.print(k + " : " + v + " "));
-
 
         ArrayList<Integer> firstSorted = new ArrayList(first.values());
         ArrayList<Integer> firstKey = new ArrayList<>(first.keySet());
@@ -656,22 +655,17 @@ public class Main {
             howFirst++;
         }
 
-        System.out.println();
-        System.out.println(howFirst);
-
+//        System.out.println();
+//        System.out.println(howFirst);
 
         String outout = "";
         int j = 4;
-
         ArrayList<Integer> arrInt = new ArrayList<>(first.keySet());
-
-        System.out.println("Итоги");
+        //System.out.println("Итоги");
         for (int i = 0; i < howFirst; i++) {
-
-
-            System.out.println(interRes.getMax());
-            System.out.println(first.get(arrInt.get(j)));
-            System.out.println(second.get(arrInt.get(j)));
+//            System.out.println(interRes.getMax());
+//            System.out.println(first.get(arrInt.get(j)));
+//            System.out.println(second.get(arrInt.get(j)));
 
             if ( second.get(arrInt.get(j)) < 25) {
                 outout = "The most pronounced trait " + res3[arrInt.get(j)] + " (" + Math.round(first.get(arrInt.get(j))) + "% of all spheres), low level (" + Math.round(second.get(arrInt.get(j))) + "%).";
