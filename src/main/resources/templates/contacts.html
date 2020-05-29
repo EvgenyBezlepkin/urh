@@ -75,7 +75,7 @@
 <!--            служебный-->
                     <input type="reset" id="contacts_reset">
             <div class="submit">
-                <input type="submit" value="Send" class="btn btn-primary btn-contacts" onclick="postDataContacts()">
+                <input type="submit" th:attr="placeholder=#{contacts.send}" class="btn btn-primary btn-contacts" onclick="postDataContacts()">
             </div>
         </form>
     </div>

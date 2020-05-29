@@ -68,7 +68,7 @@
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-9 heading-sectio text-center">
-                <p class="text">Instruction</p>
+                <p class="text" th:text="#{instruction}">Instruction</p>
                 <p class="p-about-desc" th:utext="#{p-about-test-desc}"></p>
             </div>
         </div>
@@ -514,27 +514,27 @@
         <div class="row justify-content-center test-form">
             <div class=" test-form">
                 <div class="d-md-flex">
-                    <input type="number" min="16" max="90" required class="form-ctrl" placeholder="Your age"
+                    <input type="number" min="16" max="90" required class="form-ctrl" th:attr="placeholder=#{test.age}"
                            th:field="*{age}" id="age">
                 </div>
                 <div class="d-md-flex">
-                    <input type="text" minlength="3" maxlength="50" required class="form-ctrl" placeholder="Your name"
+                    <input type="text" minlength="3" maxlength="50" required class="form-ctrl" th:attr="placeholder=#{test.name}"
                            th:field="*{name}">
                 </div>
                 <div class="d-md-flex form-check-lbl">
                     <input type="checkbox" class="form-check-inp" id="test_check">
 
-                    <button data-toggle="modal" data-target="#exampleModalScrollable" class="acceptance">
-                        Accept the terms
-                    </button>
+                    <div class="d-md-flex">
+                    <a data-toggle="modal" data-target="#exampleModalScrollable" class="terms acceptance" th:text="#{terms1}"></a>&nbsp;и&nbsp;<br>
+                    <a data-toggle="modal" data-target="#policyModalScrollable" class="terms acceptance" th:text="#{terms2}"></a>
 
-                    <!-- Modal -->
                     <div th:insert="fragments/terms.html"></div>
-
+                    <div th:insert="fragments/policy.html"></div>
+                    </div>
 
                 </div>
                 <div class="submit">
-                    <button type="submit" class="btn btn-primary btn-test" >Next</button>
+                    <button type="submit" class="btn btn-primary btn-test" th:text="#{next}">Next</button>
                 </div>
             </div>
         </div>

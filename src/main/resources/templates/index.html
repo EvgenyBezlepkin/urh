@@ -54,11 +54,13 @@
             <li class="ftco-animate"><a href="https://www.youtube.com/channel/UCAqNI-_SI90gFzBu2Nkyc5A?view_as=subscriber" target="_blank"><span class="icon-youtube"></span></a></li>
         </ul>
     </div>
-    <div class="row">
-        <div class="col-md-12 text-center beta">
-            <p class="version">2019 - 2020</p>
+        <div class="row justify-content-center" id="cookie_notification">
+                <span class="cookie">We use Cookies for improving our work.
+                <button class="cookie-button acceptance" data-toggle="modal" data-target="#cookiesModalScrollable" >Read more about cookies.</button>
+                <div th:insert="fragments/cookies.html"></div>
+                </span>
+            <input type="button" value="Принять" class="cookie_accept">
         </div>
-    </div>
 </footer>
 
 <div th:insert="fragments/subfooter.html"></div>

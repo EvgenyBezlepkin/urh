@@ -602,3 +602,8 @@ a:hover {
         margin-top: 1.8rem;
     }
 }
+
+.terms {
+    color: white !important;
+    cursor: pointer;
+}

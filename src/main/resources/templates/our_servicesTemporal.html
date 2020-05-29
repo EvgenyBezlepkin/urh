@@ -40,23 +40,23 @@
 
                                 <div class="d-md-flex">
                                     <div class="form-group">
-                                        <input type="text" required  class="form-control" placeholder="Name" th:field="*{name}">
+                                        <input type="text" required  class="form-control" placeholder="Name" th:attr="placeholder=#{contacts.name}">
                                     </div>
                                 </div>
                                 <div class="d-md-flex">
                                     <div class="form-group">
-                                        <input type="email" required  class="form-control" placeholder="Email" th:field="*{email}">
+                                        <input type="email" required  class="form-control" placeholder="Email" th:attr="placeholder=#{contacts.email}">
                                     </div>
                                 </div>
                                 <div class="d-md-flex">
                                     <div class="form-group">
-                                        <input type="text" required  class="form-control" placeholder="Additional question" th:field="*{addQuestion}">
+                                        <input type="text" required  class="form-control" placeholder="Additional question" th:attr="placeholder=#{contacts.whatlike}">
                                     </div>
                                 </div>
                             </div>
 
                             <div class="submit">
-                                <input type="submit" value="Send" class="btn btn-primary btn-contacts">
+                                <input type="submit" th:attr="placeholder=#{contacts.send}" class="btn btn-primary btn-contacts">
                             </div>
 
                         </form>

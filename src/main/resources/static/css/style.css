@@ -6010,6 +6010,7 @@ button.close {
     -ms-flex: 1 1 auto;
     flex: 1 1 auto;
     padding: 1rem;
+    color: white;
 }
 
 .modal-footer {
@@ -12769,7 +12770,24 @@ option {
 
 .main-btn{
     font-size: 1.5rem;
+    /*transform: scale(1);*/
+    animation: pulse 2.5s ease-in-out infinite;
 }
+
+
+@keyframes pulse {
+    from {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.12);
+    }
+    to {
+        transform: scale(1);
+    }
+}
+
+
 
 .text-greeting{
     margin-bottom: 9rem;
@@ -12807,72 +12825,6 @@ option {
 }
 
 
-
-@keyframes spin {
-    from {
-        transform: rotate(0);
-    }
-    to{
-        transform: rotate(359deg);
-    }
-}
-
-@keyframes spin3D {
-    from {
-        transform: rotate3d(.5,.5,.5, 360deg);
-    }
-    to{
-        transform: rotate3d(0deg);
-    }
-}
-
-@keyframes configure-clockwise {
-    0% {
-        transform: rotate(0);
-    }
-    25% {
-        transform: rotate(90deg);
-    }
-    50% {
-        transform: rotate(180deg);
-    }
-    75% {
-        transform: rotate(270deg);
-    }
-    100% {
-        transform: rotate(360deg);
-    }
-}
-
-@keyframes configure-xclockwise {
-    0% {
-        transform: rotate(45deg);
-    }
-    25% {
-        transform: rotate(-45deg);
-    }
-    50% {
-        transform: rotate(-135deg);
-    }
-    75% {
-        transform: rotate(-225deg);
-    }
-    100% {
-        transform: rotate(-315deg);
-    }
-}
-
-@keyframes pulse {
-    from {
-        opacity: 1;
-        transform: scale(1);
-    }
-    to {
-        opacity: .25;
-        transform: scale(.75);
-    }
-}
-
 /* GRID STYLING */
 
 .spinner-box {
@@ -12906,6 +12858,62 @@ option {
     background-color: #37474f;
     border-radius: 50%;
 }
+
+
+#cookie_notification{
+    display: none;
+    justify-content: space-between;
+    align-items: baseline;
+    /*position: fixed;*/
+    /*bottom: 15px;*/
+    /*left: 50%;*/
+    width: 60%;
+    /*max-width: 90%;*/
+    /*transform: translateX(-50%);*/
+    /*!*padding: 25px;*!*/
+    background-color: white;
+    border-radius: 5px;
+    /*box-shadow: 2px 3px 10px rgba(0, 0, 0, 0.4);*/
+    /*z-index: 1;*/
+    padding: 0 0.5rem;
+    margin: 0 auto;
+}
+
+.cookie{
+    font-size: 1rem;
+    color: black;
+}
+
+.cookie-button{
+    border: none;
+    background: transparent;
+    color: blue;
+}
+
+
+@media (min-width: 576px){
+    #cookie_notification.show{
+        display: flex;
+    }
+    .cookie_accept{
+        margin: 0 0 0 25px;
+    }
+}
+
+@media (max-width: 575px){
+    #cookie_notification.show{
+        display: block;
+        text-align: left;
+    }
+    .cookie_accept{
+        margin: 10px 0 0 0;
+    }
+}
+
+.cookie_accept {
+
+}
+
 
 /*.result-modal {*/
 /*    margin-top: 25%;*/
