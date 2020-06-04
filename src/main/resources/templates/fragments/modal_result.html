@@ -11,15 +11,15 @@
                     <form onsubmit="return false" class="appointment-form" >
                         <div class="d-md-flex">
                             <select class="form-control" required id="feedback_rate">
-                                <option value="Rate our service">Rate our service</option>
-                                <option value="Excellent">Excellent!</option>
-                                <option value="Good">Good</option>
-                                <option value="Can do better">Can do better</option>
+                                <option  th:text="#{contact-us.rate}" value="1">Rate our service</option>
+                                <option  th:text="#{contact-us.excellent}" value="2">Excellent!</option>
+                                <option  th:text="#{contact-us.good}" value="3">Good</option>
+                                <option  th:text="#{contact-us.cando}" value="4">Can do better</option>
                             </select>
                         </div>
                         <div class="d-me-flex">
                             <div class="form-group">
-                                <input required type="text" class="form-control" placeholder="What do you think about our site?" id="feedback_desc">
+                                <input required type="text" class="form-control" th:attr="placeholder=#{contacts.whatlike}" id="feedback_desc">
                             </div>
                         </div>
                         <div class="submit">
