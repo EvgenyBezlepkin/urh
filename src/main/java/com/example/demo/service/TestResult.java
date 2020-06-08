@@ -17,25 +17,43 @@ public class TestResult {
         this.interRes = interRes;
     }
 
-    public String gerResult() {
+    public String getResult(String lang) {
         int[] res1 = new int[]{interRes.getTOV(), interRes.getTEV(), interRes.getLPV(), interRes.getOFV(), interRes.getTAV()};
         int[] res2 = new int[]{interRes.getTOS(), interRes.getTES(), interRes.getLPS(), interRes.getOFS(), interRes.getTAS()};
         String[] res3 = new String[]{"Theorist-researcher", "Technician-executor", "Leader-teacher", "Social activist-philanthropist", "Creator-artist"};
+        String[] res3Ru = new String[]{"Теоретик-исследователь", "Техник-исполнитель", "Лидер-преподаватель", "Общественник-филантроп", "Творец-артист"};
         String out1 = "", out2 = "", out3 = "", out4 = "", out5 = "";
         String[] out = new String[]{out1, out2, out3, out4, out5};
 
-        for (int i = 0; i < 5; i++) {
-            if (res1[i] < 25) {
-                out[i] = res3[i] + ": inside the sphere: " + Math.round(res1[i]) + "% (low level). Share of all spheres: " + Math.round(res2[i]) + "%. ";
+        if ("en".equals(lang)) {
+            for (int i = 0; i < 5; i++) {
+                if (res1[i] < 25) {
+                    out[i] = res3[i] + ": inside the sphere: " + Math.round(res1[i]) + "% (low level). Share of all spheres: " + Math.round(res2[i]) + "%. ";
+                }
+                if (res1[i] >= 25 & res1[i] < 50) {
+                    out[i] = res3[i] + ": inside the sphere: " + Math.round(res1[i]) + "% (average level). Share of all spheres: " + Math.round(res2[i]) + "%. ";
+                }
+                if (res1[i] >= 50 & res1[i] < 75) {
+                    out[i] = res3[i] + ": inside the sphere: " + Math.round(res1[i]) + "% (above average level). Share of all spheres: " + Math.round(res2[i]) + "%. ";
+                }
+                if (res1[i] >= 75) {
+                    out[i] = res3[i] + ": inside the sphere: " + Math.round(res1[i]) + "% (high level). Share of all spheres: " + Math.round(res2[i]) + "%. ";
+                }
             }
-            if (res1[i] >= 25 & res1[i] < 50) {
-                out[i] = res3[i] + ": inside the sphere: " + Math.round(res1[i]) + "% (average level). Share of all spheres: " + Math.round(res2[i]) + "%. ";
-            }
-            if (res1[i] >= 50 & res1[i] < 75) {
-                out[i] = res3[i] + ": inside the sphere: " + Math.round(res1[i]) + "% (above average level). Share of all spheres: " + Math.round(res2[i]) + "%. ";
-            }
-            if (res1[i] >= 75) {
-                out[i] = res3[i] + ": inside the sphere: " + Math.round(res1[i]) + "% (high level). Share of all spheres: " + Math.round(res2[i]) + "%. ";
+        } else {
+            for (int i = 0; i < 5; i++) {
+                if (res1[i] < 25) {
+                    out[i] = res3Ru[i] + ": внутри сферы от максимального возможного уровня: " + Math.round(res1[i]) + "% (низкий уровень). Среди всех сфер профиль выражен на: " + Math.round(res2[i]) + "%. ";
+                }
+                if (res1[i] >= 25 & res1[i] < 50) {
+                    out[i] = res3Ru[i] + ": внутри сферы от максимального возможного уровня: " + Math.round(res1[i]) + "% (средний уровень). Среди всех сфер профиль выражен на: " + Math.round(res2[i]) + "%. ";
+                }
+                if (res1[i] >= 50 & res1[i] < 75) {
+                    out[i] = res3Ru[i] + ": внутри сферы от максимального возможного уровня: " + Math.round(res1[i]) + "% (уровень выше среднего). Среди всех сфер профиль выражен на: " + Math.round(res2[i]) + "%. ";
+                }
+                if (res1[i] >= 75) {
+                    out[i] = res3Ru[i] + ": внутри сферы от максимального возможного уровня: " + Math.round(res1[i]) + "% (высокий уровень). Среди всех сфер профиль выражен на: " + Math.round(res2[i]) + "%. ";
+                }
             }
         }
 
@@ -97,26 +115,51 @@ public class TestResult {
         int j = 4;
         ArrayList<Integer> arrInt = new ArrayList<>(first.keySet());
 
-        for (int i = 0; i < howFirst; i++) {
-            if ( second.get(arrInt.get(j)) < 25) {
-                outout = "The most pronounced trait " + res3[arrInt.get(j)] + " (" + Math.round(first.get(arrInt.get(j))) + "% of all spheres), low level (" + Math.round(second.get(arrInt.get(j))) + "%).";
+
+        if ("en".equals(lang)) {
+            for (int i = 0; i < howFirst; i++) {
+                if (second.get(arrInt.get(j)) < 25) {
+                    outout = "The most pronounced trait " + res3[arrInt.get(j)] + " (" + Math.round(first.get(arrInt.get(j))) + "% of all spheres), low level (" + Math.round(second.get(arrInt.get(j))) + "%).";
+                }
+                if (second.get(arrInt.get(j)) >= 25 & second.get(arrInt.get(j)) < 50) {
+                    outout = "The most pronounced trait " + res3[arrInt.get(j)] + " (" + Math.round(first.get(arrInt.get(j))) + "% of all spheres), average level (" + Math.round(second.get(arrInt.get(j))) + "%).";
+                }
+                if (second.get(arrInt.get(j)) >= 50 & second.get(arrInt.get(j)) < 75) {
+                    System.out.println("here");
+                    outout = "The most pronounced trait " + res3[arrInt.get(j)] + " (" + Math.round(first.get(arrInt.get(j))) + "% of all spheres), above average level (" + Math.round(second.get(arrInt.get(j))) + "%).";
+                }
+                if (second.get(arrInt.get(j)) >= 75) {
+                    outout = "The most pronounced trait " + res3[arrInt.get(j)] + " (" + Math.round(first.get(arrInt.get(j))) + "% of all spheres), high level (" + Math.round(second.get(arrInt.get(j))) + "%).";
+                }
+                j--;
+                resOut.append("<li>");
+                resOut.append(outout);
+                resOut.append("</li>");
+                resOut.append("\n");
             }
-            if ( second.get(arrInt.get(j)) >= 25 & second.get(arrInt.get(j)) < 50) {
-                outout = "The most pronounced trait " + res3[arrInt.get(j)] + " (" + Math.round(first.get(arrInt.get(j))) + "% of all spheres), average level (" + Math.round(second.get(arrInt.get(j))) + "%).";
+        } else {
+            for (int i = 0; i < howFirst; i++) {
+                if (second.get(arrInt.get(j)) < 25) {
+                    outout = "Наиболее выражена черта " + res3Ru[arrInt.get(j)] + " (" + Math.round(first.get(arrInt.get(j))) + "% среди всех сфер), низкий уровень (" + Math.round(second.get(arrInt.get(j))) + "%).";
+                }
+                if (second.get(arrInt.get(j)) >= 25 & second.get(arrInt.get(j)) < 50) {
+                    outout = "Наиболее выражена черта " + res3Ru[arrInt.get(j)] + " (" + Math.round(first.get(arrInt.get(j))) + "% среди всех сфер), средний уровень (" + Math.round(second.get(arrInt.get(j))) + "%).";
+                }
+                if (second.get(arrInt.get(j)) >= 50 & second.get(arrInt.get(j)) < 75) {
+                    System.out.println("here");
+                    outout = "Наиболее выражена черта " + res3Ru[arrInt.get(j)] + " (" + Math.round(first.get(arrInt.get(j))) + "% среди всех сфер), уровень выше среднего (" + Math.round(second.get(arrInt.get(j))) + "%).";
+                }
+                if (second.get(arrInt.get(j)) >= 75) {
+                    outout = "Наиболее выражена черта " + res3Ru[arrInt.get(j)] + " (" + Math.round(first.get(arrInt.get(j))) + "% среди всех сфер), высокий уровень (" + Math.round(second.get(arrInt.get(j))) + "%).";
+                }
+                j--;
+                resOut.append("<li>");
+                resOut.append(outout);
+                resOut.append("</li>");
+                resOut.append("\n");
             }
-            if ( second.get(arrInt.get(j)) >= 50 & second.get(arrInt.get(j)) < 75) {
-                System.out.println("here");
-                outout = "The most pronounced trait " + res3[arrInt.get(j)] + " (" + Math.round(first.get(arrInt.get(j))) + "% of all spheres), above average level (" + Math.round(second.get(arrInt.get(j))) + "%).";
-            }
-            if ( second.get(arrInt.get(j)) >= 75) {
-                outout = "The most pronounced trait " + res3[arrInt.get(j)] + " (" + Math.round(first.get(arrInt.get(j))) + "% of all spheres), high level (" + Math.round(second.get(arrInt.get(j))) + "%).";
-            }
-            j--;
-            resOut.append("<li>");
-            resOut.append(outout);
-            resOut.append("</li>");
-            resOut.append("\n");
         }
+
         resOut.append("</ul>");
         return resOut.toString();
     }

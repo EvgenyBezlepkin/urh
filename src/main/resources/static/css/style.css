@@ -12774,6 +12774,9 @@ option {
     animation: pulse 2.5s ease-in-out infinite;
 }
 
+.animate {
+    animation: pulse 2.5s ease-in-out infinite;
+}
 
 @keyframes pulse {
     from {
@@ -12808,6 +12811,7 @@ option {
     margin-top: 3rem;
     padding-left: 30px;
     padding-right: 30px;
+    width: 80%;
 }
 
 .to-instagram{

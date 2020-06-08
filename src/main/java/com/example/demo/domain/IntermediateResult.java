@@ -3,11 +3,11 @@ package com.example.demo.domain;
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 
+
 @Entity
-@NotNull
 public class IntermediateResult {
+
     @Id
-    @GeneratedValue
     private long id;
     private int TOS = 0;
     private int TES = 0;
@@ -22,6 +22,9 @@ public class IntermediateResult {
     private int TAV = 0;
     @Transient
     private int max = 0;
+    @OneToOne
+    @PrimaryKeyJoinColumn
+    private Result result;
 
     public IntermediateResult() {
     }
@@ -38,6 +41,15 @@ public class IntermediateResult {
         this.OFV = OFV;
         this.TAV = TAV;
         this.max = max;
+    }
+
+
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
     }
 
     public int getTOS() {
@@ -126,5 +138,13 @@ public class IntermediateResult {
 
     public void setMax(int max) {
         this.max = max;
+    }
+
+    public Result getResult() {
+        return result;
+    }
+
+    public void setResult(Result result) {
+        this.result = result;
     }
 }

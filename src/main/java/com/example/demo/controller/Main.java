@@ -4,6 +4,7 @@ import com.example.demo.domain.*;
 import com.example.demo.repository.IntermediateResultRepository;
 import com.example.demo.repository.ResultRepository;
 import com.example.demo.repository.ServiceTemporalRepository;
+import com.example.demo.repository.TestRepository;
 import com.example.demo.service.TestIntermediateResult;
 import com.example.demo.service.TestResult;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -12,15 +13,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
-import java.io.File;
 import java.io.IOException;
-import java.net.URI;
 import java.net.URISyntaxException;
-import java.nio.file.Files;
-import java.nio.file.Paths;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Objects;
+import java.time.LocalDateTime;
 
 @Controller
 public class Main {
@@ -32,15 +27,17 @@ public class Main {
     private final TestIntermediateResult interRes;
     private final TestResult testRes;
     private final ResultRepository resultRepository;
+    private final TestRepository testRepository;
 
 
-    public Main(@Qualifier("getJavaMailSender") JavaMailSender emailSender,  IntermediateResultRepository intermediateResult, ResultRepository resultRepository,ServiceTemporalRepository serviceTemporalRepository, TestIntermediateResult interRes, TestResult testRes) {
+    public Main(@Qualifier("getJavaMailSender") JavaMailSender emailSender, IntermediateResultRepository intermediateResult, ResultRepository resultRepository, ServiceTemporalRepository serviceTemporalRepository, TestIntermediateResult interRes, TestResult testRes, TestRepository testRepository) {
         this.resultRepository = resultRepository;
         this.emailSender = emailSender;
         this.intermediateResult = intermediateResult;
         this.serviceTemporalRepository = serviceTemporalRepository;
         this.interRes = interRes;
         this.testRes = testRes;
+        this.testRepository = testRepository;
     }
 
     //C:\Java projects\demo\target\classes\sendMessageRu
@@ -58,12 +55,27 @@ public class Main {
 
 
     @RequestMapping("/result")
-    public String resTest(Model model, @ModelAttribute Test item) {
+    public String resTest(Model model, @ModelAttribute Test item, @RequestHeader("Accept-Language") String langHeader) {
+
+        String lang = langHeader.substring(0, 2);
+
         IntermediateResult interRes = countTest(item);
-        String res = countResult(interRes);
+        String res = countResult(interRes, lang);
         res = res.replaceAll("%. ", "%<br>");
+
+        Result result = new Result(item.getName(), item.getEmail(), res, item.getAge(), LocalDateTime.now());
+
+        Result resultSave = resultRepository.save(result);
+
+        Long id = resultSave.getId();
+
+        item.setId(id);
+        testRepository.save(item);
+
+        interRes.setId(id);
         intermediateResult.save(interRes);
-        model.addAttribute("result", new Result(item.getAge(), item.getName(), res, interRes));
+
+        model.addAttribute("result", result);
         return "result";
     }
 
@@ -107,9 +119,9 @@ public class Main {
     }
 
 
-    private String countResult(IntermediateResult interRes) {
+    private String countResult(IntermediateResult interRes, String lang) {
         testRes.setInterRes(interRes);
-        return testRes.gerResult();
+        return testRes.getResult(lang);
     }
 
 

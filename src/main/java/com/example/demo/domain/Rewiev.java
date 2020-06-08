@@ -3,13 +3,14 @@ package com.example.demo.domain;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.PrimaryKeyJoinColumn;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotNull;
 
 @Entity
 public class Rewiev {
+
     @Id
-    @GeneratedValue
     private long id;
     @NotNull
     private String name;

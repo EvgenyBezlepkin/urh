@@ -8,7 +8,6 @@ import javax.persistence.Id;
 public class ServiceTemporal {
 
     @Id
-    @GeneratedValue
     private int id;
     private String name;
     private String email;

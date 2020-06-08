@@ -9,11 +9,10 @@ public class Result {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private long id;
     @NotNull
     private String name;
     @Email
-    @NotNull
     private String email;
     @Transient
     private String outs;
@@ -22,37 +21,27 @@ public class Result {
     @NotNull
     LocalDateTime ldt;
 
-    @OneToOne
-    private IntermediateResult intermediateResult;
 
     public Result() {
     }
 
-    public Result(@NotNull int age, @NotNull String name, @NotNull String outs, IntermediateResult intermediateResult, LocalDateTime ldt) {
+    public Result(@NotNull String name, @Email @NotNull String email, String outs, @NotNull int age, @NotNull LocalDateTime ldt) {
         this.name = name;
+        this.email = email;
         this.outs = outs;
         this.age = age;
-        this.intermediateResult = intermediateResult;
         this.ldt = ldt;
     }
 
-    public Result(@NotNull int age, @NotNull String name, @NotNull String outs, IntermediateResult intermediateResult) {
-        this.name = name;
-        this.outs = outs;
-        this.age = age;
-        this.intermediateResult = intermediateResult;
+    public LocalDateTime getLdt() {
+        return ldt;
     }
 
-
-    public IntermediateResult getIntermediateResult() {
-        return intermediateResult;
+    public void setLdt(LocalDateTime ldt) {
+        this.ldt = ldt;
     }
 
-    public void setIntermediateResult(IntermediateResult intermediateResult) {
-        this.intermediateResult = intermediateResult;
-    }
-
-    public int getId() {
+    public long getId() {
         return id;
     }
 
@@ -92,11 +81,5 @@ public class Result {
         this.id = id;
     }
 
-    public LocalDateTime getLdt() {
-        return ldt;
-    }
 
-    public void setLdt(LocalDateTime ldt) {
-        this.ldt = ldt;
-    }
 }

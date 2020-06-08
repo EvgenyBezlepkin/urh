@@ -2,11 +2,15 @@ package com.example.demo.domain;
 
 import org.springframework.stereotype.Controller;
 
+import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 
-@Controller
+
+@Entity
 public class Test {
 
+    @Id
+    private long id;
     private int val1; //val1
     private int b; //val2
     private int d; //val3
@@ -30,12 +34,45 @@ public class Test {
     private int w; //val21
     private int u; //val22
     private int i; //val23
-    @NotNull
+
+    @Transient
     private Integer age;
-    @NotNull
+
+    @Transient
     private String name;
 
+    @Transient
+    private String email;
+
+    @OneToOne
+    @PrimaryKeyJoinColumn
+    private Result result;
+
     public Test() {
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public Result getResult() {
+        return result;
+    }
+
+    public void setResult(Result result) {
+        this.result = result;
     }
 
     public int getVal1() {

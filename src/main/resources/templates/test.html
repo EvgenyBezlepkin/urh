@@ -552,13 +552,16 @@
                     <input type="text" minlength="3" maxlength="50" required class="form-ctrl" th:attr="placeholder=#{test.name}"
                            th:field="*{name}">
                 </div>
+                <div class="d-md-flex">
+                    <input type="email" minlength="3" maxlength="100" required class="form-ctrl" th:attr="placeholder=#{label.email}"
+                           th:field="*{email}">
+                </div>
                 <div class="d-md-flex form-check-lbl">
                     <input type="checkbox" class="form-check-inp" id="test_check">
 
                     <div class="d-md-flex">
                     <a data-toggle="modal" data-target="#exampleModalScrollable" class="terms acceptance" th:text="#{terms1}"></a>&nbsp;и&nbsp;<br>
                     <a data-toggle="modal" data-target="#policyModalScrollable" class="terms acceptance" th:text="#{terms2}"></a>
-
 
                         <div th:if="${'ru'.equals(#locale.language)}" >
                             <div th:insert="fragments/termsRu.html"></div>
