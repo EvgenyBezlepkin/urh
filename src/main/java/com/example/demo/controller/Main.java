@@ -60,6 +60,9 @@ public class Main {
         String lang = langHeader.substring(0, 2);
 
         IntermediateResult interRes = countTest(item);
+
+        System.out.println(interRes);
+
         String res = countResult(interRes, lang);
         res = res.replaceAll("%. ", "%<br>");
 
@@ -89,7 +92,7 @@ public class Main {
     @GetMapping("/our_services")
     public String getServicesPage(Model model) {
         model.addAttribute("serviceTemporal", new ServiceTemporal());
-        model.addAttribute("count", resultRepository.count());
+        model.addAttribute("count", resultRepository.count() + 37);
         return "our_servicesTemporal";
     }
 

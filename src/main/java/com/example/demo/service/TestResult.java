@@ -132,9 +132,9 @@ public class TestResult {
                     outout = "The most pronounced trait " + res3[arrInt.get(j)] + " (" + Math.round(first.get(arrInt.get(j))) + "% of all spheres), high level (" + Math.round(second.get(arrInt.get(j))) + "%).";
                 }
                 j--;
-                resOut.append("<li>");
+                //resOut.append("<li>");
                 resOut.append(outout);
-                resOut.append("</li>");
+                //resOut.append("</li>");
                 resOut.append("\n");
             }
         } else {
@@ -153,9 +153,9 @@ public class TestResult {
                     outout = "Наиболее выражена черта " + res3Ru[arrInt.get(j)] + " (" + Math.round(first.get(arrInt.get(j))) + "% среди всех сфер), высокий уровень (" + Math.round(second.get(arrInt.get(j))) + "%).";
                 }
                 j--;
-                resOut.append("<li>");
+                //resOut.append("<li>");
                 resOut.append(outout);
-                resOut.append("</li>");
+                //resOut.append("</li>");
                 resOut.append("\n");
             }
         }

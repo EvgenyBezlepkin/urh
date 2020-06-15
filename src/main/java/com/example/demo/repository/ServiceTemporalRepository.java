@@ -5,5 +5,4 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface ServiceTemporalRepository extends JpaRepository<ServiceTemporal, Integer>{
     ServiceTemporal findById(int id);
-
 }

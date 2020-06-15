@@ -374,10 +374,8 @@
          body: JSON.stringify(data)
      })
          .then(response => {
-             if (response.ok) {
                  document.getElementById("contacts_reset").click()
-                 document.getElementById("contact_us").innerText="Feedback has been received"
-             }
+                 document.getElementById("contact_us").innerText="Отзыв был отправлен"
          })
  }
 

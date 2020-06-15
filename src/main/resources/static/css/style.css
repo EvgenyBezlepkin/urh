@@ -12918,7 +12918,6 @@ option {
 
 }
 
-
-/*.result-modal {*/
-/*    margin-top: 25%;*/
-/*}*/
+.modal-body-header{
+    text-align: center;
+}

@@ -18,30 +18,32 @@ public class TestIntermediateResult {
         this.item = item;
     }
 
-    // TE: техник-исполнитель; ТО: теоретик-исследователь; LP: лидер-преподаватель;OF: общественник-филантроп; TА: творец-артист
-    private int TE = 0;
-    private int TO = 0;
-    private int LP = 0;
-    private int OF = 0;
-    private int TA = 0;
-    private int SUM;
-    //СРЕДИ ВСЕХ СФЕР TOS - % теоретика среди всех сфер; TES - % техника от всех сфер; LPS - % лидера от всех сфер; OFS - % общественника среди всех сфер; TAS - % творца среди всех сфер
-    private double TOS = 0;
-    private double TES = 0;
-    private double LPS = 0;
-    private double OFS = 0;
-    private double TAS = 0;
-    //ВНУТРИ СВОЕЙ СФЕРЫ TOV - % теоретика внутри своей сферы; TEV - % техника внтури своей сферы; LPV - % лидера внутри своей сферы; OFV - % общественника внутри своей сферы; TAV - % творца внутри своей сферы
-    private double TOV = 0;
-    private double TEV = 0;
-    private double LPV = 0;
-    private double OFV = 0;
-    private double TAV = 0;
-
-    //Максимум среди всех сфер
-    private double MAX = 0;
 
     public IntermediateResult compute() {
+
+        // TE: техник-исполнитель; ТО: теоретик-исследователь; LP: лидер-преподаватель;OF: общественник-филантроп; TА: творец-артист
+        int TE = 0;
+        int TO = 0;
+        int LP = 0;
+        int OF = 0;
+        int TA = 0;
+        int SUM;
+        //СРЕДИ ВСЕХ СФЕР TOS - % теоретика среди всех сфер; TES - % техника от всех сфер; LPS - % лидера от всех сфер; OFS - % общественника среди всех сфер; TAS - % творца среди всех сфер
+        double TOS = 0;
+        double TES = 0;
+        double LPS = 0;
+        double OFS = 0;
+        double TAS = 0;
+        //ВНУТРИ СВОЕЙ СФЕРЫ TOV - % теоретика внутри своей сферы; TEV - % техника внтури своей сферы; LPV - % лидера внутри своей сферы; OFV - % общественника внутри своей сферы; TAV - % творца внутри своей сферы
+        double TOV = 0;
+        double TEV = 0;
+        double LPV = 0;
+        double OFV = 0;
+        double TAV = 0;
+
+        //Максимум среди всех сфер
+        double MAX = 0;
+
 
 //1 ВОПРОС: Тех и Общ
         if (item.getVal1() == -2 | item.getVal1() == -1) {
@@ -313,9 +315,8 @@ public class TestIntermediateResult {
         MAX = DoubleStream.of(TOS, TES, LPS, OFS, TAS)
                 .max().getAsDouble();
 
-        IntermediateResult ir = new IntermediateResult((int) Math.round(TOS), (int) Math.round(TES), (int) Math.round(LPS), (int) Math.round(OFS), (int) Math.round(TAS),
+        return new IntermediateResult((int) Math.round(TOS), (int) Math.round(TES), (int) Math.round(LPS), (int) Math.round(OFS), (int) Math.round(TAS),
                 (int) Math.round(TOV), (int) Math.round(TEV), (int) Math.round(LPV), (int) Math.round(OFV), (int) Math.round(TAV),
                 (int) Math.round(MAX));
-        return ir;
     }
 }

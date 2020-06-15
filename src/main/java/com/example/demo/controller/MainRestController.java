@@ -73,11 +73,14 @@ public class MainRestController {
         //System.out.println(uriRu);
 
 
-        String res = result.getOuts().replaceAll("%. ", "%<br>");
+        String res = result.getOuts()
+                .replaceAll("%. ", "%<br>");
 
-        String[] resArray = res.split("<br>");
+        String res2 = res
+                .replaceAll("<li>", "")
+                .replaceAll("</li>", "");
 
-        System.out.println(Arrays.toString(resArray));
+        String[] resArray = res2.split("<br>");
 
         String htmlEn =
                 "<div    style=\"background:#000000;\n" +
@@ -240,8 +243,7 @@ public class MainRestController {
                         "<br><br><br>\n" +
                         "<hr><br>\n" +
                         "                        <h2>Теоретик-исследователь</h2>\n" +
-                                                 resArray[0] + "<br><br>" +
-                        "                        Этот профессиональный профиль наиболее точно описывает Вас.\n" +
+                        resArray[0] + "<br><br>" +
                         "                        Это люди, у которых важнейшие ценности – это знание и правда. Их работа требует углубления в детали специальности, жажду новых знаний и объективное суждение о мире. В зависимости от специальности\n" +
                         "                        теоретики- исследователи могут в той или иной степени взаимодействовать с другими людьми, но чаще работа у них уединенная. Это люди, способные отстаивать свою точку зрения, прибегая к фактам и результатам\n" +
                         "                        собственных исследований и поисков.<br>\n" +
