@@ -18,13 +18,33 @@
         background-attachment: fixed;
         background-size: cover;
     }
+    .text-greeting{
+        margin-bottom: 9rem;
+    }
+    .main-btn{
+        font-size: 1.5rem;
+        /*transform: scale(1);*/
+        animation: pulse 2.5s ease-in-out infinite;
+        padding: 1rem !important;
+    }
+
+    @keyframes pulse {
+        from {
+            transform: scale(1);
+        }
+        50% {
+            transform: scale(1.12);
+        }
+        to {
+            transform: scale(1);
+        }
+    }
 </style>
 
 <nav th:insert="fragments/navbar.html :: nav"></nav>
 
 <main>
     <section class="ftco-section">
-        <div class="overlay"></div>
         <div class="container">
             <div class="row justify-content-center ">
                 <div class="col-md-7 heading-section ftco-animate text-center">

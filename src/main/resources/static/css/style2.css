@@ -508,14 +508,14 @@ a:hover {
 }
 
 
-
 @media (max-width: 800px) {
     .five-points {
         width: 94%;
         margin: 1rem 1rem 1rem 1rem;
     }
     .test-test{
-        font-size: 23px;
+        font-size: 20px;
+        line-height: 1.3em;
     }
 }
 

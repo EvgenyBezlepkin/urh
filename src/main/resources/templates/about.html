@@ -1,20 +1,74 @@
-
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+
 <head th:insert="fragments/head.html :: head"> </head>
+
 <body>
-<!-- Google Tag Manager (noscript) -->
+
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TN9PV57"
                   height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
+
 <style type="text/css">
     body {
-        background: linear-gradient( rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6) ),url(images/8.jpg);
-        background-color:rgba(0,0,0,.01);
+        background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(images/8.jpg);
+        background-color: rgba(0, 0, 0, .01);
         background-repeat: no-repeat;
         background-attachment: fixed;
         background-size: cover;
     }
+
+    .about-peoples{
+        padding: 25px;
+        bordeR: 1px solid white;
+        -webkit-border-radius: 10px;
+        -moz-border-radius: 10px;
+        -ms-border-radius: 10px;
+        border-radius: 10px;
+        -moz-transition: all 0.3s ease;
+        -o-transition: all 0.3s ease;
+        -webkit-transition: all 0.3s ease;
+        -ms-transition: all 0.3s ease;
+        transition: all 0.3s ease;
+        width:380px;
+        height: 460px;
+        background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+        margin: 10px 10px 10px 10px;
+        margin-bottom: 3rem;
+        text-align: center !important;
+    }
+
+    @media (max-width: 400px) {
+        .about-peoples {
+            display: flex;
+            width: 300px;
+            height: 95%;
+            flex-wrap: wrap;
+        }
+    }
+
+    .about-peoples .img {
+        width: 140px;
+        height: 140px;
+        border: 1px solid white;
+        margin: 0 auto 6%;
+        -webkit-border-radius: 50%;
+        -moz-border-radius: 50%;
+        -ms-border-radius: 50%;
+        border-radius: 50%;
+        -moz-transition: all 0.3s ease;
+        -o-transition: all 0.3s ease;
+        -webkit-transition: all 0.3s ease;
+        -ms-transition: all 0.3s ease;
+        transition: all 0.3s ease;
+    }
+
+    .p-about-desc{
+        font-weight: normal;
+        font-size: 19px;
+        margin-top: 4rem;
+        margin-bottom: 3rem;
+    }
+
 </style>
 
 <nav th:insert="fragments/navbar.html :: nav"></nav>
@@ -50,23 +104,22 @@
             <!--</div>-->
             <div class=" ftco-animate">
                 <div class="about-peoples">
-                    <div class="img mb-4" style="background-image: url(images/kor.png);"></div>
-                    <div class="info text-center" th:utext="#{about_kristina}">
+                    <div class="img" style="background-image: url(images/kor.png);"></div>
+                    <div th:utext="#{about_kristina}">
                     </div>
                 </div>
             </div>
             <div class=" ftco-animate">
                 <div class="about-peoples">
-                    <div class="img mb-4" style="background-image: url(images/boy.png);"></div>
-                    <div class="info text-center" th:utext="#{about_alexey}">
+                    <div class="img" style="background-image: url(images/boy.png);"></div>
+                    <div th:utext="#{about_alexey}">
                     </div>
                 </div>
             </div>
             <div class=" ftco-animate">
                 <div class="about-peoples">
-                    <div class="img mb-4" style="background-image: url(images/bez.png);"></div>
-                    <div class="info text-center" th:utext="#{about_evgeny}">
-
+                    <div class="img" style="background-image: url(images/bez.png);"></div>
+                    <div th:utext="#{about_evgeny}">
                     </div>
                 </div>
             </div>

@@ -15,6 +15,29 @@
         background-repeat: no-repeat;
         background-attachment: fixed;
     }
+    .text-contact{
+        padding-left: 1.1rem;
+    }
+    .text-contacts{
+        font-size: 18px;
+    }
+    .contacts{
+        height: 400px;
+        margin: 20px 20px 20px 20px;
+        min-width: 250px;
+        flex-grow: 1;
+    }
+    .my-map {
+        width: 100%;
+        min-height: 100%;
+    }
+
+    @media (max-width: 767.98px) {
+        .my-map {
+            min-height: 100%;
+            margin-bottom: 30px;
+        }
+    }
 </style>
 
 <nav th:insert="fragments/navbar.html :: nav"></nav>
@@ -22,7 +45,6 @@
 <section class=" ftco-section">
     <!--<div class="overlay"></div>-->
     <div class="container">
-
         <div class="row justify-content-start text-contact">
             <p class="text-contacts" th:utext="#{text_contacts}">
             </p>
