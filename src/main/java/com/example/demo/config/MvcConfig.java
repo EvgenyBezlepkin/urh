@@ -1,6 +1,6 @@
 package com.example.demo.config;
 
-import jdk.nashorn.internal.runtime.URIUtils;
+
 import org.springframework.boot.web.servlet.FilterRegistrationBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
